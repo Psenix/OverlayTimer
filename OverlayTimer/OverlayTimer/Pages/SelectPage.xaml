@@ -1,0 +1,43 @@
+﻿<Page x:Class="OverlayTimer.SelectPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OverlayTimer"
+        mc:Ignorable="d"
+        Height="450" Width="800" Background="#FF1F1F1F">
+    <Grid Margin="0,6,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Button x:Name="DoneBtn" IsEnabled="False" Content="Done" FontSize="16" BorderThickness="0"  FontWeight="Bold" Grid.Column="9" Grid.Row="8" Click="DoneBtn_Click"/>
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="5">
+            <ComboBox x:Name="Options" IsEditable="True" IsReadOnly="True" Text="Select a game" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="40" SelectionChanged="Options_SelectionChanged"/>
+        </StackPanel>
+        <TextBlock Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="2" TextAlignment="Center" Text="Choose the category" FontSize="38" FontWeight="Bold" Foreground="White"/>
+    </Grid>
+</Page>
