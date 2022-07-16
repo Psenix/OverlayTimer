@@ -1,29 +1,25 @@
 ﻿using Indieteur.GlobalHooks;
+using OverlayTimer.Global;
 using System;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Interop;
 
 namespace OverlayTimer
 {
     public partial class Timer : Window
     {
-        GlobalKeyHook globalKeyHook = new GlobalKeyHook();
+        bool userClosed = true;
+        TimeSpan time;
+        readonly string category;
         readonly System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         readonly TimerModel timerModel = new TimerModel();
-        TimeSpan time;
-        public MainWindow mainWindow;
-        public MainPage mainPage;
-        public string userName;
-        public string category;
 
-        public Timer()
+        public Timer(string category_)
         {
             InitializeComponent();
-            globalKeyHook.OnKeyDown += GlobalKeyHook_OnKeyDown;
+            category = category_;
+            TimerTitle.Text = category;
+            GlobalVariables.GlobalKeyHook.OnKeyDown += GlobalKeyHook_OnKeyDown;
             TimeBlock.DataContext = timerModel;
             timerModel.Timer = "00:00:00";
             timer.Interval = 30;
@@ -39,15 +35,17 @@ namespace OverlayTimer
             {
                 if (timer.Enabled)
                 {
+                    GlobalVariables.GlobalKeyHook.OnKeyDown -= GlobalKeyHook_OnKeyDown;
                     timer.Stop();
-                    SubmitPage submitPage = new SubmitPage(time, userName, category, mainWindow, mainPage);
-                    mainWindow.MainFrame.Navigate(submitPage);
-                    mainWindow.Show();
-                    mainWindow.Activate();
-                    globalKeyHook = null;
+                    SubmitPage submitPage = new SubmitPage(time, category);
+                    MainWindow main = GlobalXAML.MainWindow;
+                    main.MainFrame.Navigate(submitPage);
+                    main.Show();
+                    main.Activate();
                     timerModel.Timer = "00:00:00";
                     time = new TimeSpan(0, 0, 0);
-                    this.Hide();
+                    userClosed = false;
+                    Close();
                 }
                 else
                 {
@@ -92,15 +90,17 @@ namespace OverlayTimer
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            TimerTitle.Text = category;
-        }
-
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
-            Environment.Exit(0);
+            if (userClosed)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                e.Cancel = false;
+            }
         }
     }
 }

@@ -2,11 +2,8 @@
 using OverlayTimer.Entities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace OverlayTimer
 {
@@ -19,22 +16,18 @@ namespace OverlayTimer
             Timeout = TimeSpan.FromSeconds(30)
         };
 
-        public static bool InsertToLeaderboard(Entry entry)
+        public static Guid InsertToLeaderboard(Entry entry)
         {
             try
             {
                 HttpContent stringContent = new StringContent(JsonConvert.SerializeObject(entry), Encoding.UTF8, "application/json");
                 var response = client.PostAsync("Leaderboard/InsertToLeaderboard", stringContent).Result;
-                var content = response.Content.ReadAsStringAsync().Result;
-                if (content != "true")
-                {
-                    return false;
-                }
-                return true;
+                var guid = JsonConvert.DeserializeObject<Guid>(response.Content.ReadAsStringAsync().Result);
+                return guid;
             }
             catch
             {
-                return false;
+                return Guid.Empty;
             }
         }
 
