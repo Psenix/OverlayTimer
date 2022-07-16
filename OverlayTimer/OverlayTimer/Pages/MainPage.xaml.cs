@@ -1,32 +1,22 @@
-﻿using OverlayTimer.Pages;
+﻿using OverlayTimer.Global;
+using OverlayTimer.Pages;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MessageBox = ModernWpf.MessageBox;
 
 namespace OverlayTimer
 {
     public partial class MainPage : Page
     {
         readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
-        readonly MainWindow mainWindow;
-        Timer timer = new Timer();
+        readonly LeaderboardPage leaderboardPage = new LeaderboardPage();
 
-        public MainPage(MainWindow mainWindow_)
+        public MainPage()
         {
             InitializeComponent();
-            mainWindow = mainWindow_;
+            GlobalXAML.MainPage = this;
             if (File.Exists(path + "username"))
             {
                 NameTextBox.Text = File.ReadAllText(path + "username");
@@ -35,10 +25,30 @@ namespace OverlayTimer
 
         private void NewTimerBtn_Click(object sender, RoutedEventArgs e)
         {
-            timer.mainWindow = mainWindow;
-            timer.mainPage = this;
-            SelectPage selectPage = new SelectPage(mainWindow, File.ReadAllText(path + "username"), timer);
-            mainWindow.MainFrame.NavigationService.Navigate(selectPage);
+            string name = File.ReadAllText(path + "username");
+            if (IsValidName(name))
+            {
+                GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new SelectPage());
+            }
+            else
+            {
+                MessageBox.Show("Your name is not valid: must be between 3-15 characters long.");
+            }
+        }
+
+        private static bool IsValidName(string name)
+        {
+            if (name.Length > 15 || name.Length < 3 || string.IsNullOrWhiteSpace(name))
+            {
+                return false;
+            }
+            string allowableLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_.";
+            foreach (char c in name)
+            {
+                if (!allowableLetters.Contains(c.ToString()))
+                    return false;
+            }
+            return true;
         }
 
         private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -79,8 +89,7 @@ namespace OverlayTimer
 
         private void LeaderboardBtn_Click(object sender, RoutedEventArgs e)
         {
-            LeaderboardPage leaderboardPage = new LeaderboardPage();
-            mainWindow.MainFrame.Navigate(leaderboardPage);
+            GlobalXAML.MainWindow.MainFrame.Navigate(leaderboardPage);
         }
     }
 }

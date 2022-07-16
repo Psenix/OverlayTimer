@@ -10,6 +10,16 @@
       Title="Overlay Timer">
 
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -58,9 +68,15 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="Title" FontSize="50" Grid.Row="1" Grid.RowSpan="4" Grid.Column="6" Grid.ColumnSpan="9" Text="Overlay Timer" FontStyle="Italic" TextDecorations="Underline" FontWeight="Bold" Foreground="White"/>
-        <Button x:Name="NewTimerBtn" Grid.Row="8" Grid.RowSpan="3" Grid.Column="8" Grid.ColumnSpan="4" Content="New Timer"  BorderThickness="0" FontSize="19" Click="NewTimerBtn_Click" />
-        <Button x:Name="LeaderboardBtn" Grid.Row="14" Grid.RowSpan="3" Grid.Column="8"  BorderThickness="0" Grid.ColumnSpan="4" Content="Leaderboards" FontSize="18" Click="LeaderboardBtn_Click"/>
-        <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Row="18" Grid.RowSpan="4"  Grid.ColumnSpan="5" VerticalContentAlignment="Bottom" Grid.Column="14" Foreground="White" FontSize="25" TextAlignment="Left" TextChanged="NameTextBox_TextChanged"/>
+        <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="3" Grid.Column="7" VerticalAlignment="Bottom" Grid.ColumnSpan="6" >
+            <TextBlock TextAlignment="Center" Text="Overlay Timer" FontStyle="Italic" TextDecorations="Underline" FontWeight="Bold" Foreground="White"/>
+        </Viewbox>
+        <Viewbox Grid.Row="8" Grid.RowSpan="3" Grid.Column="8" VerticalAlignment="Bottom" Grid.ColumnSpan="4" Stretch="Uniform" MaxWidth="260" MaxHeight="80">
+            <Button x:Name="NewTimerBtn"  Content="New Timer"  BorderThickness="0" Click="NewTimerBtn_Click" />
+        </Viewbox>
+        <Viewbox Grid.Row="15" Grid.RowSpan="3" Grid.Column="8" VerticalAlignment="Top" Grid.ColumnSpan="4" Stretch="Uniform" MaxWidth="270" MaxHeight="80">
+            <Button x:Name="LeaderboardBtn" BorderThickness="0" Content="Leaderboard" Click="LeaderboardBtn_Click"/>
+        </Viewbox>
+        <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Row="18" Grid.RowSpan="4"  Grid.ColumnSpan="5" VerticalContentAlignment="Bottom" Grid.Column="14" Foreground="White" FontSize="22" TextAlignment="Left" TextChanged="NameTextBox_TextChanged"/>
     </Grid>
 </Page>

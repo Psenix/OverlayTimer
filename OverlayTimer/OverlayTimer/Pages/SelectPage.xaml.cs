@@ -1,55 +1,64 @@
 ﻿using OverlayTimer.Controllers;
+using OverlayTimer.Global;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace OverlayTimer
 {
     public partial class SelectPage : Page
     {
-        readonly MainWindow mainWindow;
-        Timer timer;
+        List<string> games;
 
-        public SelectPage(MainWindow mainWindow_, string userName_, Timer timer_)
+        public SelectPage()
         {
             InitializeComponent();
             Task task = new Task(GetAvailableGames);
             task.Start();
-            mainWindow = mainWindow_;
-            timer = timer_;
-            timer.userName = userName_;
         }
 
         private void DoneBtn_Click(object sender, RoutedEventArgs e)
         {
-            timer.category = Options.Text;
-            timer.Show();
-            mainWindow.Hide();
+            if (games.Contains(Options.Text))
+            {
+                GlobalXAML.MainWindow.Hide();
+                Timer timer = new Timer(Options.Text);
+                timer.Show();
+            }
+            else
+            {
+                DoneBtn.IsEnabled = false;
+            }
         }
 
         private void GetAvailableGames()
         {
-            List<string> games = GamesController.GetGames();
-            foreach (var game in games)
+            games = GamesController.GetGames();
+            Dispatcher.BeginInvoke(new Action(() =>
             {
-                Dispatcher.BeginInvoke(new Action(() => Options.Items.Add(new ComboBoxItem() { Content = game })));
-            }
+                Options.Items.RemoveAt(0);
+                foreach (var game in games)
+                {
+                    Options.Items.Add(new ComboBoxItem() { Content = game });
+                }
+            }));
         }
 
         private void Options_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DoneBtn.IsEnabled = true;
+        }
+
+        private void Options_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Options.Text = string.Empty;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
         }
     }
 }

@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OverlayTimer"
         mc:Ignorable="d"
-        Height="450" Width="800" Background="#FF1F1F1F">
-    <Grid Margin="0,6,0,-6">
+       d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -32,12 +42,20 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-        <Button x:Name="DoneBtn" IsEnabled="False" Content="Done" FontSize="16" BorderThickness="0"  FontWeight="Bold" Grid.Column="9" Grid.Row="8" Click="DoneBtn_Click"/>
-        <StackPanel Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="5">
-            <ComboBox x:Name="Options" IsEditable="True" IsReadOnly="True" Text="Select a game" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" Height="40" SelectionChanged="Options_SelectionChanged"/>
+        <Viewbox Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
+            <Button Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="Button_Click"/>
+        </Viewbox>
+        <Viewbox Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform">
+            <TextBlock  VerticalAlignment="Bottom" TextAlignment="Center" Text="Choose the category" FontWeight="Bold" Foreground="White"/>
+        </Viewbox>
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="5" Grid.Row="4">
+            <ComboBox x:Name="Options" IsEditable="True" IsTextSearchEnabled="True" Text="Select a game" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" SelectionChanged="Options_SelectionChanged"  GotFocus="Options_GotFocus">
+                <ComboBoxItem Content="Fetching data from API..." IsEnabled="False" FontSize="15" x:Name="LoadingItem"/>
+            </ComboBox>
         </StackPanel>
-        <TextBlock Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="2" TextAlignment="Center" Text="Choose the category" FontSize="38" FontWeight="Bold" Foreground="White"/>
+        <Viewbox Stretch="Uniform" Grid.Column="9" Grid.Row="8">
+            <Button x:Name="DoneBtn" IsEnabled="False" Content="Done" BorderThickness="0"  FontWeight="Bold" Click="DoneBtn_Click"/>
+        </Viewbox>
     </Grid>
 </Page>
