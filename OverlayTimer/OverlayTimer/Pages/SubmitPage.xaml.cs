@@ -1,12 +1,20 @@
 ﻿using Newtonsoft.Json;
+using OverlayTimer.Controllers;
 using OverlayTimer.Entities;
-using OverlayTimer.Global;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using MessageBox = ModernWpf.MessageBox;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace OverlayTimer
 {
@@ -15,24 +23,18 @@ namespace OverlayTimer
         readonly TimeSpan timeScore = TimeSpan.Zero;
         readonly string userName = string.Empty;
         readonly string category = string.Empty;
+        readonly MainPage mainPage;
         readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
+        MainWindow mainWindow;
 
-        public SubmitPage(TimeSpan timeScore_, string category_)
+        public SubmitPage(TimeSpan timeScore_, string userName_, string category_, MainWindow mainWindow_, MainPage mainPage_)
         {
             InitializeComponent();
-            userName = File.ReadAllText(path + "username");
-            category = category_;
             timeScore = timeScore_;
-            Time.Text = "Time: " + FormatTime(timeScore);
-        }
-        private static string FormatTime(TimeSpan time)
-        {
-            var timeStr = time.ToString("hh'h 'mm'm 'ss's 'fff' ms'");
-            while (timeStr.StartsWith("00"))
-            {
-                timeStr = timeStr.Substring(4);
-            }
-            return timeStr;
+            userName = userName_;
+            category = category_;
+            mainWindow = mainWindow_;
+            mainPage = mainPage_;
         }
 
         private void PublicBtn_Click(object sender, RoutedEventArgs e)
@@ -45,18 +47,9 @@ namespace OverlayTimer
                     Username = userName,
                     VideoLink = VideoLink.Text,
                     Category = category,
-                    SubmitDate = DateTime.UtcNow,
                 };
-                Guid result = LeaderboardController.InsertToLeaderboard(entry);
-                if (result != Guid.Empty)
-                {
-                    entry.Guid = result;
-                    LocalSubmittion(entry);
-                }
-                else
-                {
-                    MessageBox.Show("Could not submit your Speedrun. Request Denied.");
-                }
+                LeaderboardController.InsertToLeaderboard(entry);
+                LocalSubmittion(entry);
             }
             else
             {
@@ -66,11 +59,10 @@ namespace OverlayTimer
 
         private void LocalSubmittion(Entry entry)
         {
-            GC.Collect();
             string entryStr = JsonConvert.SerializeObject(entry);
-            File.AppendAllText(path + category, entryStr + Environment.NewLine);
-            GlobalXAML.MainWindow.MainFrame.Navigate(GlobalXAML.MainPage);
-            //MessageBox.Show("Succesfully submitted the speedrun", "Success");
+            File.AppendAllText(path + category, entryStr);
+            mainWindow.MainFrame.Navigate(mainPage);
+            MessageBox.Show("Succesfully submitted");
         }
 
         private void LocalBtn_Click(object sender, RoutedEventArgs e)
@@ -81,8 +73,6 @@ namespace OverlayTimer
                 Username = userName,
                 VideoLink = VideoLink.Text,
                 Category = category,
-                SubmitDate = DateTime.UtcNow,
-                Guid = Guid.NewGuid()
             };
             LocalSubmittion(entry);
         }
@@ -103,11 +93,6 @@ namespace OverlayTimer
 
             var result = Uri.TryCreate(url, UriKind.Absolute, out Uri uriResult) && (uriResult.Scheme == Uri.UriSchemeHttp || uriResult.Scheme == Uri.UriSchemeHttps);
             return result;
-        }
-
-        private void CancelBtn_Click(object sender, RoutedEventArgs e)
-        {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
         }
     }
 }
