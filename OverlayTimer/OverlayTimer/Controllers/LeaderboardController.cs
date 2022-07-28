@@ -12,7 +12,6 @@ namespace OverlayTimer
         private static readonly HttpClient client = new HttpClient()
         {
             BaseAddress = new Uri("https://overlaytimerapi.azurewebsites.net/"),
-            //BaseAddress = new Uri("https://localhost:7001/"),
             Timeout = TimeSpan.FromSeconds(30)
         };
 
@@ -43,6 +42,50 @@ namespace OverlayTimer
             catch
             {
                 return null;
+            }
+        }
+
+        public static List<Entry> GetUnverifiedEntries(string token)
+        {
+            try
+            {
+                var response = client.GetAsync("Leaderboard/GetUnverifiedEntries?password=" + token).Result;
+                var content = response.Content.ReadAsStringAsync().Result;
+                List<Entry> entries = JsonConvert.DeserializeObject<List<Entry>>(content);
+                return entries;
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
+        public static bool VerifyEntry(Entry entry, string token)
+        {
+            try
+            {
+                HttpContent stringContent = new StringContent(JsonConvert.SerializeObject(entry), Encoding.UTF8, "application/json");
+                var response = client.PostAsync("Leaderboard/VerifyEntry?password=" + token, stringContent).Result;
+                return JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool DeleteEntry(string guid, string username)
+        {
+            try
+            {
+                HttpContent stringContent = new StringContent("");
+                var response = client.PostAsync("Leaderboard/DeleteEntry?guid=" + guid + "&username=" + username, stringContent).Result;
+                return JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+            }
+            catch
+            {
+                return false;
             }
         }
     }

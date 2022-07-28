@@ -1,7 +1,9 @@
 ﻿using OverlayTimer.Global;
+using OverlayTimer.Pages;
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Input;
 
 namespace OverlayTimer
 {
@@ -25,6 +27,14 @@ namespace OverlayTimer
         {
             e.Cancel = true;
             Environment.Exit(0);
+        }
+
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (Keyboard.Modifiers == ModifierKeys.Control && Keyboard.Modifiers == ModifierKeys.Alt && e.Key == Key.E)
+            {
+                GlobalXAML.MainWindow.MainFrame.Navigate(new ModeratorPage());
+            }
         }
     }
 }

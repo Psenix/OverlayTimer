@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using MessageBox = ModernWpf.MessageBox;
 
 namespace OverlayTimer
@@ -90,6 +91,20 @@ namespace OverlayTimer
         private void LeaderboardBtn_Click(object sender, RoutedEventArgs e)
         {
             GlobalXAML.MainWindow.MainFrame.Navigate(leaderboardPage);
+        }
+
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.E))
+            {
+                GlobalXAML.MainWindow.MainFrame.Navigate(new ModeratorPage());
+            }
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid.Focus();
         }
     }
 }

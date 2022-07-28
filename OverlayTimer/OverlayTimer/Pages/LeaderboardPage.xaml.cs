@@ -79,14 +79,15 @@ namespace OverlayTimer.Pages
         private void GetPublicLeaderboard(string selectedItem)
         {
             var list = LeaderboardController.GetLeaderboard(selectedItem);
-            list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
-            foreach (var item in list)
+            if (list.Count > 0)
             {
-                string previewLink = FormatURL(item.VideoLink);
-                string time = FormatTime(item.TimeScore);
-                DataEntity entity = new DataEntity(item.Username, time, item.SubmitDate.ToLocalTime().ToShortDateString(), previewLink, item.VideoLink);
-                dataModel.Data.Add(entity);
-                LeaderboardList.Items.Refresh();
+                list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
+                foreach (var item in list)
+                {
+                    DataEntity entity = new DataEntity(item);
+                    dataModel.Data.Add(entity);
+                    LeaderboardList.Items.Refresh();
+                }
             }
         }
 
@@ -100,52 +101,20 @@ namespace OverlayTimer.Pages
                 {
                     entries.Add(JsonConvert.DeserializeObject<Entry>(item));
                 }
-                entries.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
-                foreach (var item in entries)
+                if (entries.Count > 0)
                 {
-                    string previewLink = FormatURL(item.VideoLink);
-                    string time = FormatTime(item.TimeScore);
-                    DataEntity entity = new DataEntity(item.Username, time, item.SubmitDate.ToLocalTime().ToShortDateString(), previewLink, item.VideoLink);
-                    dataModel.Data.Add(entity);
-                    LeaderboardList.Items.Refresh();
+                    entries.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
+                    foreach (var item in entries)
+                    {
+                        DataEntity entity = new DataEntity(item);
+                        dataModel.Data.Add(entity);
+                        LeaderboardList.Items.Refresh();
+                    }
                 }
             }
         }
 
-        private static string FormatTime(TimeSpan time)
-        {
-            var timeStr = time.ToString("hh'h 'mm'm 'ss's 'fff' ms'");
-            while (timeStr.StartsWith("00"))
-            {
-                timeStr = timeStr.Substring(4);
-            }
-            return timeStr;
-        }
 
-        private static string FormatURL(string previewLink)
-        {
-            if (!string.IsNullOrWhiteSpace(previewLink))
-            {
-                if (previewLink.StartsWith("http://"))
-                {
-                    previewLink = previewLink.Remove(0, 7);
-                }
-                else if (previewLink.StartsWith("https://"))
-                {
-                    previewLink = previewLink.Remove(0, 8);
-                }
-                //if (previewLink.Length > 30)
-                //{
-                //    previewLink = previewLink.Substring(0, 30);
-                //    previewLink += "...";
-                //}
-            }
-            else
-            {
-                return "Not specified";
-            }
-            return previewLink;
-        }
 
         private void LeaderboardList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

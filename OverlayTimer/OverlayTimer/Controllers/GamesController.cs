@@ -10,7 +10,6 @@ namespace OverlayTimer.Controllers
         private static readonly HttpClient client = new HttpClient()
         {
             BaseAddress = new Uri("https://overlaytimerapi.azurewebsites.net/"),
-            //BaseAddress = new Uri("https://localhost:7001/"),
             Timeout = TimeSpan.FromSeconds(30)
         };
 

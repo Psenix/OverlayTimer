@@ -52,6 +52,7 @@ namespace OverlayTimer
                 {
                     entry.Guid = result;
                     LocalSubmittion(entry);
+                    MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
                 }
                 else
                 {
@@ -70,7 +71,6 @@ namespace OverlayTimer
             string entryStr = JsonConvert.SerializeObject(entry);
             File.AppendAllText(path + category, entryStr + Environment.NewLine);
             GlobalXAML.MainWindow.MainFrame.Navigate(GlobalXAML.MainPage);
-            //MessageBox.Show("Succesfully submitted the speedrun", "Success");
         }
 
         private void LocalBtn_Click(object sender, RoutedEventArgs e)

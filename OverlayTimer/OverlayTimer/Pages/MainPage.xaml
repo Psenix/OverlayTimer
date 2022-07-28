@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Overlay Timer">
 
-    <Grid>
+    <Grid x:Name="Grid" KeyDown="Grid_KeyDown" Focusable="True" Loaded="Grid_Loaded">
         <Grid.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
