@@ -30,6 +30,21 @@ namespace OverlayTimer
             }
         }
 
+        public static Guid GetGuidFromID(string ID, string password)
+        {
+            try
+            {
+                var response = client.GetAsync("Leaderboard/GetGuidFromID?ID=" + ID + "&password=" + password).Result;
+                var content = response.Content.ReadAsStringAsync().Result;
+                var guid = JsonConvert.DeserializeObject<Guid>(content);
+                return guid;
+            }
+            catch
+            {
+                return Guid.Empty;
+            }
+        }
+
         public static List<Entry> GetLeaderboard(string game)
         {
             try
@@ -82,6 +97,20 @@ namespace OverlayTimer
                 HttpContent stringContent = new StringContent("");
                 var response = client.PostAsync("Leaderboard/DeleteEntry?guid=" + guid + "&username=" + username, stringContent).Result;
                 return JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IsValidToken(string token)
+        {
+            try
+            {
+                var response = client.GetAsync("Leaderboard/CorrectPassword?password=" + token).Result;
+                var content = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<bool>(content);
             }
             catch
             {

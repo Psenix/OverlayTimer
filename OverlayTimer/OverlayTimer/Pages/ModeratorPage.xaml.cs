@@ -122,11 +122,19 @@ namespace OverlayTimer.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            File.WriteAllText(path + "token", TokenTextBox.Text);
-            token = TokenTextBox.Text;
-            Task.Run(LoadLeaderboard);
-            LeaderboardGrid.Visibility = Visibility.Visible;
-            LoginGrid.Visibility = Visibility.Collapsed;
+            string token = TokenTextBox.Text;
+            if (LeaderboardController.IsValidToken(token))
+            {
+                File.WriteAllText(path + "token", token);
+                this.token = token;
+                Task.Run(LoadLeaderboard);
+                LeaderboardGrid.Visibility = Visibility.Visible;
+                LoginGrid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                MessageBox.Show("Entered token is not correct, please try again.", "Invalid token");
+            }
         }
 
     }

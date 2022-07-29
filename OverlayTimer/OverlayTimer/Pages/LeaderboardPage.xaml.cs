@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using static OverlayTimer.Models.DataModel;
 using MessageBox = ModernWpf.MessageBox;
 
@@ -26,6 +28,7 @@ namespace OverlayTimer.Pages
             Task task = new Task(GetAvailableGames);
             task.Start();
         }
+
 
         private void GetAvailableGames()
         {
@@ -53,27 +56,28 @@ namespace OverlayTimer.Pages
         {
             string selectedItem = ((ComboBoxItem)e.AddedItems[0]).Content.ToString();
             LoadLeaderboard(selectedItem, Games.Text);
+
         }
 
         private void LoadLeaderboard(string publicOrLocal, string game)
         {
-            try
-            {
-                dataModel.Data.Clear();
-                if (publicOrLocal == "Public")
+                try
                 {
-                    GetPublicLeaderboard(game);
+                    dataModel.Data.Clear();
+                    if (publicOrLocal == "Public")
+                    {
+                        GetPublicLeaderboard(game);
+                    }
+                    else if (publicOrLocal == "Local")
+                    {
+                        GetLocalLeaderboard(game);
+                    }
+                    LeaderboardList.Items.Refresh();
                 }
-                else if (publicOrLocal == "Local")
+                catch (Exception e)
                 {
-                    GetLocalLeaderboard(game);
+                    MessageBox.Show(e.Message);
                 }
-                LeaderboardList.Items.Refresh();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
         }
 
         private void GetPublicLeaderboard(string selectedItem)
@@ -122,19 +126,30 @@ namespace OverlayTimer.Pages
             if (items.Count > 0)
             {
                 var item = (DataEntity)e.AddedItems[0];
-                if (!string.IsNullOrWhiteSpace(item.VideoLink))
+                if (Mouse.RightButton == MouseButtonState.Pressed && File.Exists(path + "token"))
+                {
+                    var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), File.ReadAllText(path + "token"));
+                    var result = MessageBox.Show("Click 'ok' to delete this run from the database", "Delete", MessageBoxButton.OKCancel);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        LeaderboardController.DeleteEntry(guid.ToString(), item.Name);
+                        Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+                    }
+                }
+                else if (!string.IsNullOrWhiteSpace(item.VideoLink))
                 {
                     Process.Start(item.VideoLink);
                 }
+                LeaderboardList.SelectedItem = null;
             }
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
         }
 
-        private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             Games.SelectedItem = null;
             Games.Text = "Select a game";
@@ -143,7 +158,7 @@ namespace OverlayTimer.Pages
             LocalPublic.Text = "Public";
         }
 
-        private void ScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
+        private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
         {
             ScrollViewer scrollViewer = (ScrollViewer)sender;
             if (e.Delta < 0)

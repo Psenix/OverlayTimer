@@ -6,6 +6,8 @@ namespace OverlayTimer.Entities
     {
         public Guid Guid { get; set; }
 
+        public Guid ID { get; set; }
+
         public string Username { get; set; }
 
         public string Category { get; set; }
