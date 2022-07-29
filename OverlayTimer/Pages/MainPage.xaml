@@ -1,0 +1,82 @@
+﻿<Page x:Class="OverlayTimer.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OverlayTimer"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Overlay Timer">
+
+    <Grid x:Name="Grid" KeyDown="Grid_KeyDown" Focusable="True" Loaded="Grid_Loaded">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Viewbox Stretch="Uniform" Grid.Row="1" Grid.RowSpan="3" Grid.Column="7" VerticalAlignment="Bottom" Grid.ColumnSpan="6" >
+            <TextBlock TextAlignment="Center" Text="Overlay Timer" FontStyle="Italic" TextDecorations="Underline" FontWeight="Bold" Foreground="White"/>
+        </Viewbox>
+        <Viewbox Grid.Row="8" Grid.RowSpan="3" Grid.Column="8" VerticalAlignment="Bottom" Grid.ColumnSpan="4" Stretch="Uniform" MaxWidth="260" MaxHeight="80">
+            <Button x:Name="NewTimerBtn"  Content="New Timer"  BorderThickness="0" Click="NewTimerBtn_Click" />
+        </Viewbox>
+        <Viewbox Grid.Row="15" Grid.RowSpan="3" Grid.Column="8" VerticalAlignment="Top" Grid.ColumnSpan="4" Stretch="Uniform" MaxWidth="270" MaxHeight="80">
+            <Button x:Name="LeaderboardBtn" BorderThickness="0" Content="Leaderboard" Click="LeaderboardBtn_Click"/>
+        </Viewbox>
+        <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Row="18" Grid.RowSpan="4"  Grid.ColumnSpan="5" VerticalContentAlignment="Bottom" Grid.Column="14" Foreground="White" FontSize="22" TextAlignment="Left" TextChanged="NameTextBox_TextChanged"/>
+    </Grid>
+</Page>
