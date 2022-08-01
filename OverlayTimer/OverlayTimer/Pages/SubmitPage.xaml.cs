@@ -4,6 +4,7 @@ using OverlayTimer.Global;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using MessageBox = ModernWpf.MessageBox;
@@ -24,7 +25,11 @@ namespace OverlayTimer
             category = category_;
             timeScore = timeScore_;
             Time.Text = "Time: " + FormatTime(timeScore);
+            GlobalXAML.MainWindow.Activate();
+            GlobalXAML.MainWindow.Topmost = true;
+            GlobalXAML.MainWindow.Topmost = false;
         }
+
         private static string FormatTime(TimeSpan time)
         {
             var timeStr = time.ToString("hh'h 'mm'm 'ss's 'fff' ms'");
@@ -39,30 +44,41 @@ namespace OverlayTimer
         {
             if (IsValidURL(VideoLink.Text))
             {
-                Entry entry = new Entry
-                {
-                    TimeScore = timeScore,
-                    Username = userName,
-                    VideoLink = VideoLink.Text,
-                    Category = category,
-                    SubmitDate = DateTime.UtcNow,
-                };
-                Guid result = LeaderboardController.InsertToLeaderboard(entry);
-                if (result != Guid.Empty)
-                {
-                    entry.Guid = result;
-                    LocalSubmittion(entry);
-                    MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
-                }
-                else
-                {
-                    MessageBox.Show("Could not submit your Speedrun. Request Denied.");
-                }
+                PublicBtn.IsEnabled = false;
+                Thread thread = new Thread(UploadEntry);
+                thread.Start();
             }
             else
             {
                 MessageBox.Show("Please give a valid link to a video of the run, if you want to submit it publicly");
             }
+        }
+
+        private void UploadEntry()
+        {
+            Entry entry = new Entry
+            {
+                TimeScore = timeScore,
+                Username = userName,
+                Category = category,
+                SubmitDate = DateTime.UtcNow
+            };
+            Dispatcher.Invoke(new Action(() => entry.VideoLink = VideoLink.Text));
+            Guid result = LeaderboardController.InsertToLeaderboard(entry);
+            if (result != Guid.Empty)
+            {
+                entry.Guid = result;
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
+                    LocalSubmittion(entry);
+                }));
+            }
+            else
+            {
+                Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Could not submit your Speedrun. Request Denied.")));
+            }
+            Dispatcher.BeginInvoke(new Action(() => PublicBtn.IsEnabled = true));
         }
 
         private void LocalSubmittion(Entry entry)

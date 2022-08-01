@@ -49,13 +49,19 @@
         <Viewbox Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform">
             <TextBlock  VerticalAlignment="Bottom" TextAlignment="Center" Text="Choose the category" FontWeight="Bold" Foreground="White"/>
         </Viewbox>
-        <StackPanel Grid.Column="3" Grid.ColumnSpan="5" Grid.Row="4">
+        <StackPanel Grid.Column="3" Grid.ColumnSpan="5" Grid.Row="3">
             <ComboBox x:Name="Options" IsEditable="True" IsTextSearchEnabled="True" Text="Select a game" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Top" VerticalContentAlignment="Center" SelectionChanged="Options_SelectionChanged"  GotFocus="Options_GotFocus">
                 <ComboBoxItem Content="Fetching data from API..." IsEnabled="False" FontSize="15" x:Name="LoadingItem"/>
             </ComboBox>
         </StackPanel>
-        <Viewbox Stretch="Uniform" Grid.Column="9" Grid.Row="8">
+        <Viewbox Stretch="Uniform" Grid.Column="9" Grid.Row="3">
             <Button x:Name="DoneBtn" IsEnabled="False" Content="Done" BorderThickness="0"  FontWeight="Bold" Click="DoneBtn_Click"/>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Grid.Column="1" Grid.Row="6" Margin="0,0,0,10" Grid.ColumnSpan="8">
+            <TextBlock x:Name="RulesTitle" Background="Transparent" Foreground="SpringGreen" FontSize="25" FontWeight="DemiBold" TextDecorations="Underline" TextAlignment="Center"/>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Grid.Column="2" Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="7">
+            <TextBox x:Name="Rules" Background="Transparent" IsEnabled="False" BorderThickness="0" Foreground="Aqua" FontSize="20" FontWeight="DemiBold" Padding="0,10,0,5"/>
         </Viewbox>
     </Grid>
 </Page>

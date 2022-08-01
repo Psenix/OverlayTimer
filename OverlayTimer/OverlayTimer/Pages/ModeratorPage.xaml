@@ -92,7 +92,7 @@
             </Viewbox>
             <TextBox x:Name="TokenTextBox" Grid.ColumnSpan="12" Grid.RowSpan="4" Grid.Row="9" Grid.Column="4" materialDesign:HintAssist.Hint="Token" VerticalContentAlignment="Bottom" Foreground="White" FontSize="26" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             <Viewbox Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Row="17" Grid.Column="8" Stretch="Uniform" >
-                <Button BorderThickness="0" VerticalAlignment="Bottom"  Content="Continue" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="Button_Click_1"/>
+                <Button x:Name="ConfirmBtn" BorderThickness="0" VerticalAlignment="Bottom"  Content="Continue" Style="{StaticResource MaterialDesignFlatDarkBgButton}" Click="Button_Click_1"/>
             </Viewbox>
         </Grid>
         <Grid x:Name="LeaderboardGrid">

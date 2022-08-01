@@ -3,6 +3,7 @@ using OverlayTimer.Models;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,15 +24,24 @@ namespace OverlayTimer.Pages
             InitializeComponent();
             LeaderboardList.ItemsSource = dataModel.Data;
 
-            if (!File.Exists(path + "token"))
+            if (File.Exists(path + "token"))
             {
-                LeaderboardGrid.Visibility = Visibility.Collapsed;
-                LoginGrid.Visibility = Visibility.Visible;
+                token = File.ReadAllText(path + "token");
+                if (LeaderboardController.IsValidToken(token))
+                {
+                    Task.Run(LoadLeaderboard);
+                }
+                else
+                {
+                    LeaderboardGrid.Visibility = Visibility.Collapsed;
+                    LoginGrid.Visibility = Visibility.Visible;
+                    MessageBox.Show("Token is not correct, please re-enter the token.", "Invalid token");
+                }
             }
             else
             {
-                token = File.ReadAllText(path + "token");
-                Task.Run(LoadLeaderboard);
+                LeaderboardGrid.Visibility = Visibility.Collapsed;
+                LoginGrid.Visibility = Visibility.Visible;
             }
         }
 
@@ -122,19 +132,32 @@ namespace OverlayTimer.Pages
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string token = TokenTextBox.Text;
+            ConfirmBtn.IsEnabled = false;
+            Thread thread = new Thread(CheckToken);
+            thread.Start();
+           
+        }
+
+        private void CheckToken()
+        {
+            string token = string.Empty;
+            Dispatcher.Invoke(new Action(() => token = TokenTextBox.Text));
             if (LeaderboardController.IsValidToken(token))
             {
                 File.WriteAllText(path + "token", token);
                 this.token = token;
-                Task.Run(LoadLeaderboard);
-                LeaderboardGrid.Visibility = Visibility.Visible;
-                LoginGrid.Visibility = Visibility.Collapsed;
+                LoadLeaderboard();
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    LeaderboardGrid.Visibility = Visibility.Visible;
+                    LoginGrid.Visibility = Visibility.Collapsed;
+                }));
             }
             else
             {
-                MessageBox.Show("Entered token is not correct, please try again.", "Invalid token");
+                Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Entered token is not correct, please try again.", "Invalid token")));
             }
+            Dispatcher.BeginInvoke(new Action(() => ConfirmBtn.IsEnabled = true));
         }
 
     }

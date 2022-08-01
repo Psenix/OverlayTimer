@@ -32,13 +32,13 @@ namespace OverlayTimer.Pages
 
         private void GetAvailableGames()
         {
-            List<string> games = GamesController.GetGames();
+            Dictionary<string, string> games = GamesController.GetGames();
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 Games.Items.RemoveAt(0);
                 foreach (var game in games)
                 {
-                    Games.Items.Add(new ComboBoxItem() { Content = game });
+                    Games.Items.Add(new ComboBoxItem() { Content = game.Key });
                 }
             }));
         }

@@ -13,13 +13,13 @@ namespace OverlayTimer.Controllers
             Timeout = TimeSpan.FromSeconds(30)
         };
 
-        public static List<string> GetGames()
+        public static Dictionary<string, string> GetGames()
         {
             try
             {
                 var response = client.GetAsync("Leaderboard/GetSupportedGames").Result;
                 var content = response.Content.ReadAsStringAsync().Result;
-                List<string> entries = JsonConvert.DeserializeObject<List<string>>(content);
+                Dictionary<string, string> entries = JsonConvert.DeserializeObject<Dictionary<string, string>>(content);
                 return entries;
             }
             catch

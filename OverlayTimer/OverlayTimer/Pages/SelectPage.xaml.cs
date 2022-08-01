@@ -10,7 +10,7 @@ namespace OverlayTimer
 {
     public partial class SelectPage : Page
     {
-        List<string> games;
+        Dictionary<string, string> games;
 
         public SelectPage()
         {
@@ -21,7 +21,7 @@ namespace OverlayTimer
 
         private void DoneBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (games.Contains(Options.Text))
+            if (games.ContainsKey(Options.Text))
             {
                 GlobalXAML.MainWindow.Hide();
                 Timer timer = new Timer(Options.Text);
@@ -41,14 +41,20 @@ namespace OverlayTimer
                 Options.Items.RemoveAt(0);
                 foreach (var game in games)
                 {
-                    Options.Items.Add(new ComboBoxItem() { Content = game });
+                    Options.Items.Add(new ComboBoxItem() { Content = game.Key });
                 }
             }));
         }
 
         private void Options_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DoneBtn.IsEnabled = true;
+            if (e.AddedItems.Count > 0)
+            {
+                DoneBtn.IsEnabled = true;
+                var selectedItem = ((ComboBoxItem)e.AddedItems[0]).Content.ToString();
+                Rules.Text = games[selectedItem];
+                RulesTitle.Text = selectedItem + " Rules";
+            }
         }
 
         private void Options_GotFocus(object sender, RoutedEventArgs e)

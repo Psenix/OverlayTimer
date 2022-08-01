@@ -1,6 +1,7 @@
 ﻿using Indieteur.GlobalHooks;
 using OverlayTimer.Global;
 using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -11,6 +12,7 @@ namespace OverlayTimer
         bool userClosed = true;
         TimeSpan time;
         readonly string category;
+        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
         readonly System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         readonly TimerModel timerModel = new TimerModel();
 
@@ -27,6 +29,12 @@ namespace OverlayTimer
             ShowInTaskbar = false;
             Left = 0;
             Top = 0;
+            if (File.Exists(path + "coordinates"))
+            {
+                string[] coords = File.ReadAllText(path + "coordinates").Split(';');
+                Left = Convert.ToDouble(coords[0]);
+                Top = Convert.ToDouble(coords[1]);
+            }
         }
 
         private void GlobalKeyHook_OnKeyDown(object sender, GlobalKeyEventArgs e)
@@ -82,6 +90,7 @@ namespace OverlayTimer
                 try
                 {
                     this.DragMove();
+                    File.WriteAllText(path + "coordinates", Left + ";" + Top);
                 }
                 catch
                 {

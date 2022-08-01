@@ -88,11 +88,11 @@
         <Viewbox VerticalAlignment="Top" Stretch="Uniform" Grid.RowSpan="2" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.Column="2" Grid.Row="1" >
             <TextBlock Text="Leaderboard" TextAlignment="Left" FontSize="35" Foreground="White"/>
         </Viewbox>
-        <ComboBox x:Name="LocalPublic" Grid.Row="1" Grid.RowSpan="2" Grid.Column="11" Grid.ColumnSpan="2" IsEditable="True" IsReadOnly="True" Text="Public" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" SelectionChanged="LocalPublic_SelectionChanged">
+        <ComboBox x:Name="LocalPublic" Grid.Row="1" Grid.RowSpan="2" Grid.Column="10" Grid.ColumnSpan="2" IsEditable="True" IsReadOnly="True" Text="Public" FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" SelectionChanged="LocalPublic_SelectionChanged">
             <ComboBoxItem Content="Public"/>
             <ComboBoxItem Content="Local"/>
         </ComboBox>
-        <ComboBox x:Name="Games" Grid.Row="1" Grid.RowSpan="2" Grid.Column="14" Grid.ColumnSpan="5" IsEditable="True" IsReadOnly="True"  Text="Select a game"  FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" SelectionChanged="Games_SelectionChanged">
+        <ComboBox x:Name="Games" Grid.Row="1" Grid.RowSpan="2" Grid.Column="13" Grid.ColumnSpan="6" IsEditable="True" IsReadOnly="True"  Text="Select a game"  FontSize="18" FontWeight="SemiBold" Foreground="White" Background="Transparent" HorizontalContentAlignment="Center" VerticalAlignment="Bottom" VerticalContentAlignment="Center" SelectionChanged="Games_SelectionChanged">
             <ComboBoxItem Content="Fetching data from API..." IsEnabled="False" FontSize="13" x:Name="LoadingItem"/>
         </ComboBox>
         <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="18" Grid.RowSpan="2" MaxHeight="60">
