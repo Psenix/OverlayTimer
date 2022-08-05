@@ -78,5 +78,10 @@
             <Button x:Name="LeaderboardBtn" BorderThickness="0" Content="Leaderboard" Click="LeaderboardBtn_Click"/>
         </Viewbox>
         <TextBox x:Name="NameTextBox" materialDesign:HintAssist.Hint="Username" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Grid.Row="18" Grid.RowSpan="4"  Grid.ColumnSpan="5" VerticalContentAlignment="Bottom" Grid.Column="14" Foreground="White" FontSize="22" TextAlignment="Left" TextChanged="NameTextBox_TextChanged"/>
+        <Viewbox Grid.Row="1" Grid.Column="18" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Button x:Name="SettingsBtn" Background="Transparent" BorderThickness="0" Click="SettingsBtn_Click">
+                <materialDesign:PackIcon Kind="Cog" Width="auto" Height="auto"/>
+            </Button>
+        </Viewbox>
     </Grid>
 </Page>

@@ -61,23 +61,23 @@ namespace OverlayTimer.Pages
 
         private void LoadLeaderboard(string publicOrLocal, string game)
         {
-                try
+            try
+            {
+                dataModel.Data.Clear();
+                if (publicOrLocal == "Public")
                 {
-                    dataModel.Data.Clear();
-                    if (publicOrLocal == "Public")
-                    {
-                        GetPublicLeaderboard(game);
-                    }
-                    else if (publicOrLocal == "Local")
-                    {
-                        GetLocalLeaderboard(game);
-                    }
-                    LeaderboardList.Items.Refresh();
+                    GetPublicLeaderboard(game);
                 }
-                catch (Exception e)
+                else if (publicOrLocal == "Local")
                 {
-                    MessageBox.Show(e.Message);
+                    GetLocalLeaderboard(game);
                 }
+                LeaderboardList.Items.Refresh();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void GetPublicLeaderboard(string selectedItem)
@@ -85,6 +85,7 @@ namespace OverlayTimer.Pages
             var list = LeaderboardController.GetLeaderboard(selectedItem);
             if (list.Count > 0)
             {
+                NoRuns.Visibility = Visibility.Collapsed;
                 list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
                 foreach (var item in list)
                 {
@@ -93,12 +94,17 @@ namespace OverlayTimer.Pages
                     LeaderboardList.Items.Refresh();
                 }
             }
+            else
+            {
+                NoRuns.Visibility = Visibility.Visible;
+            }
         }
 
         private void GetLocalLeaderboard(string selectedItem)
         {
             if (File.Exists(path + selectedItem))
             {
+                NoRuns.Visibility = Visibility.Collapsed;
                 var stringArray = File.ReadAllLines(path + selectedItem);
                 List<Entry> entries = new List<Entry>();
                 foreach (var item in stringArray)
@@ -107,6 +113,7 @@ namespace OverlayTimer.Pages
                 }
                 if (entries.Count > 0)
                 {
+                    NoRuns.Visibility = Visibility.Collapsed;
                     entries.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
                     foreach (var item in entries)
                     {
@@ -115,6 +122,14 @@ namespace OverlayTimer.Pages
                         LeaderboardList.Items.Refresh();
                     }
                 }
+                else if (selectedItem != "Select a game")
+                {
+                        NoRuns.Visibility = Visibility.Visible;
+                }
+            }
+            else if (selectedItem != "Select a game")
+            {
+                    NoRuns.Visibility = Visibility.Visible;
             }
         }
 
@@ -156,6 +171,7 @@ namespace OverlayTimer.Pages
             dataModel.Data.Clear();
             LeaderboardList.Items.Refresh();
             LocalPublic.Text = "Public";
+            NoRuns.Visibility = Visibility.Collapsed; 
         }
 
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

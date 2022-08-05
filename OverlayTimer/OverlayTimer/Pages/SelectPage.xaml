@@ -61,7 +61,7 @@
             <TextBlock x:Name="RulesTitle" Background="Transparent" Foreground="SpringGreen" FontSize="25" FontWeight="DemiBold" TextDecorations="Underline" TextAlignment="Center"/>
         </Viewbox>
         <Viewbox Stretch="Uniform" Grid.Column="2" Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="7">
-            <TextBox x:Name="Rules" Background="Transparent" IsEnabled="False" BorderThickness="0" Foreground="Aqua" FontSize="20" FontWeight="DemiBold" Padding="0,10,0,5"/>
+            <TextBox x:Name="Rules" Background="Transparent" IsReadOnly="True" Style="{x:Null}" BorderBrush="Transparent" BorderThickness="0" Foreground="Aqua" FontSize="20" FontWeight="DemiBold" Padding="0,10,0,5"/>
         </Viewbox>
     </Grid>
 </Page>

@@ -153,5 +153,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
+        <Viewbox x:Name="NoRuns" Stretch="Uniform" Grid.Column="6" Grid.ColumnSpan="7" Grid.Row="11" Grid.RowSpan="2" Visibility="Collapsed">
+            <Label Content="No runs available in this category" Foreground="LightGray"/>
+        </Viewbox>
     </Grid>
 </Page>

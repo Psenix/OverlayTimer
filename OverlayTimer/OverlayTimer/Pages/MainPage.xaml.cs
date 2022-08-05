@@ -106,5 +106,10 @@ namespace OverlayTimer
         {
             Grid.Focus();
         }
+
+        private void SettingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new SettingsPage());
+        }
     }
 }

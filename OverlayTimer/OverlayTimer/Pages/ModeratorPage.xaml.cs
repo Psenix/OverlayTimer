@@ -85,17 +85,7 @@ namespace OverlayTimer.Pages
                 var item = (DataEntity)e.AddedItems[0];
                 if (Mouse.RightButton == MouseButtonState.Pressed)
                 {
-                    var result = MessageBox.Show("Click 'yes' to approve this run or click 'no' to delete the run from the database", "Edit", MessageBoxButton.YesNoCancel);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        LeaderboardController.VerifyEntry(item.Entry, token);
-                        Task.Run(LoadLeaderboard);
-                    }
-                    else if (result == MessageBoxResult.No)
-                    {
-                        LeaderboardController.DeleteEntry(item.Entry.Guid.ToString(), item.Name);
-                        Task.Run(LoadLeaderboard);
-                    }
+                    GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new EditEntryPage(item.Entry));
                 }
                 else if (!string.IsNullOrWhiteSpace(item.VideoLink))
                 {
@@ -135,7 +125,7 @@ namespace OverlayTimer.Pages
             ConfirmBtn.IsEnabled = false;
             Thread thread = new Thread(CheckToken);
             thread.Start();
-           
+
         }
 
         private void CheckToken()
@@ -160,5 +150,9 @@ namespace OverlayTimer.Pages
             Dispatcher.BeginInvoke(new Action(() => ConfirmBtn.IsEnabled = true));
         }
 
+        private void Page_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            Task.Run(LoadLeaderboard);
+        }
     }
 }

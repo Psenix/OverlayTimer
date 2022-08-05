@@ -64,6 +64,9 @@
     <Compile Include="Global\GlobalVariables.cs" />
     <Compile Include="Global\GlobalXAML.cs" />
     <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Pages\EditEntryPage.xaml.cs">
+      <DependentUpon>EditEntryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LeaderboardPage.xaml.cs">
       <DependentUpon>LeaderboardPage.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SubmitPage.xaml.cs">
       <DependentUpon>SubmitPage.xaml</DependentUpon>
     </Compile>
@@ -85,6 +91,10 @@
       <DependentUpon>Timer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\TimerModel.cs" />
+    <Page Include="Pages\EditEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LeaderboardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

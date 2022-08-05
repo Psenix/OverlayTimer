@@ -3,6 +3,7 @@ using OverlayTimer.Global;
 using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace OverlayTimer
@@ -15,6 +16,8 @@ namespace OverlayTimer
         readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
         readonly System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
         readonly TimerModel timerModel = new TimerModel();
+        Key startStopKey = Key.NumPad0;
+        Key resetKey = Key.NumPad9;
 
         public Timer(string category_)
         {
@@ -39,7 +42,17 @@ namespace OverlayTimer
 
         private void GlobalKeyHook_OnKeyDown(object sender, GlobalKeyEventArgs e)
         {
-            if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(Key.NumPad0))
+            KeyConverter keyConverter = new KeyConverter();
+            if (File.Exists(path + "StartStopHotkey"))
+            {
+                startStopKey = (Key)keyConverter.ConvertFromString(File.ReadAllText(path + "StartStopHotkey"));
+            }
+            if(File.Exists(path + "ResetHotkey"))
+            {
+                resetKey = (Key)keyConverter.ConvertFromString(File.ReadAllText(path + "ResetHotkey"));
+            }
+
+            if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(startStopKey))
             {
                 if (timer.Enabled)
                 {
@@ -61,7 +74,7 @@ namespace OverlayTimer
                 }
 
             }
-            else if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(Key.NumPad9))
+            else if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(resetKey))
             {
                 timer.Stop();
                 timerModel.Timer = "00:00:00";
@@ -76,9 +89,14 @@ namespace OverlayTimer
             {
                 timerModel.Timer = string.Format("{0:mm\\:ss\\:ff}", time);
             }
-            else
+            else if (time < TimeSpan.FromHours(24))
             {
                 timerModel.Timer = string.Format("{0:hh\\:mm\\:ss}", time);
+            }
+            else
+            {
+                string timeStr = ((int)time.TotalHours).ToString() + ":" + string.Format("{0:mm\\:ss}", time);
+                timerModel.Timer = timeStr;
             }
         }
 
