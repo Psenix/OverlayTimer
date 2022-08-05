@@ -32,11 +32,16 @@ namespace OverlayTimer.Pages
         {
             InitializeComponent();
             this.item = item_;
-            Title.Text = item.Username + "'s Speedrun";
+            TitleTextBox.Text = item.Username + "'s Speedrun";
             Hours.Text = (item.TimeScore.Days * 24 + item.TimeScore.Hours).ToString();
             Minutes.Text = item.TimeScore.Minutes.ToString();
             Seconds.Text = item.TimeScore.Seconds.ToString();
-            Milliseconds.Text = item.TimeScore.Milliseconds.ToString();
+            string milliseconds = item.TimeScore.Milliseconds.ToString();
+            while(milliseconds.Length < 3)
+            {
+                milliseconds = "0" + milliseconds;
+            }
+            Milliseconds.Text = milliseconds;
         }
 
         private void Hours_TextChanged(object sender, TextChangedEventArgs e)
@@ -46,7 +51,7 @@ namespace OverlayTimer.Pages
                 Hours.Text = Hours.Text.Remove(Hours.Text.Length - 1);
                 Hours.CaretIndex = 3;
             }
-            if (!string.IsNullOrWhiteSpace(Hours.Text) && !int.TryParse(Hours.Text, out var num))
+            if (!string.IsNullOrWhiteSpace(Hours.Text) && !int.TryParse(Hours.Text, out _))
             {
                 Hours.Text = Hours.Text.Remove(Hours.Text.Length - 1);
                 Hours.CaretIndex = Hours.Text.Length;
@@ -60,7 +65,7 @@ namespace OverlayTimer.Pages
                 Minutes.Text = Minutes.Text.Remove(Minutes.Text.Length - 1);
                 Minutes.CaretIndex = 2;
             }
-            if (!string.IsNullOrWhiteSpace(Minutes.Text) && !int.TryParse(Minutes.Text, out var num))
+            if (!string.IsNullOrWhiteSpace(Minutes.Text) && !int.TryParse(Minutes.Text, out _))
             {
                 Minutes.Text = Minutes.Text.Remove(Minutes.Text.Length - 1);
                 Minutes.CaretIndex = Minutes.Text.Length;
@@ -74,7 +79,7 @@ namespace OverlayTimer.Pages
                 Seconds.Text = Seconds.Text.Remove(Seconds.Text.Length - 1);
                 Seconds.CaretIndex = 2;
             }
-            if (!string.IsNullOrWhiteSpace(Seconds.Text) && !int.TryParse(Seconds.Text, out var num))
+            if (!string.IsNullOrWhiteSpace(Seconds.Text) && !int.TryParse(Seconds.Text, out _))
             {
                 Seconds.Text = Seconds.Text.Remove(Seconds.Text.Length - 1);
                 Seconds.CaretIndex = Seconds.Text.Length;
@@ -88,7 +93,7 @@ namespace OverlayTimer.Pages
                 Milliseconds.Text = Milliseconds.Text.Remove(Milliseconds.Text.Length - 1);
                 Milliseconds.CaretIndex = 3;
             }
-            if (!string.IsNullOrWhiteSpace(Milliseconds.Text) && !int.TryParse(Milliseconds.Text, out var num))
+            if (!string.IsNullOrWhiteSpace(Milliseconds.Text) && !int.TryParse(Milliseconds.Text, out _))
             {
                 Milliseconds.Text = Milliseconds.Text.Remove(Milliseconds.Text.Length - 1);
                 Milliseconds.CaretIndex = Milliseconds.Text.Length;

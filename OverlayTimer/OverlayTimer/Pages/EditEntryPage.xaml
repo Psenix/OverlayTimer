@@ -79,7 +79,7 @@
         </StackPanel>
 
         <Viewbox Grid.Column="5" Grid.ColumnSpan="10" Grid.Row="2" Grid.RowSpan="2" Stretch="Uniform">
-            <TextBlock x:Name="Title" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="TitleTextBox" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="20" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Uniform">
             <Button x:Name="DeleteButton" Content="Delete" BorderThickness="0" Background="Red" Click="DeleteButton_Click"/>

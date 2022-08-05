@@ -2,6 +2,7 @@
 using OverlayTimer.Pages;
 using System;
 using System.IO;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -18,10 +19,26 @@ namespace OverlayTimer
         {
             InitializeComponent();
             GlobalXAML.MainPage = this;
+            GetUsername();
+            GenerateKey();
+        }
+
+        private void GenerateKey()
+        {
+            if (!File.Exists(path + "key"))
+            {
+                File.WriteAllText(path + "key", Guid.NewGuid().ToString());
+            }
+        }
+
+        private void GetUsername()
+        {
+            var name = "Anonymous";
             if (File.Exists(path + "username"))
             {
-                NameTextBox.Text = File.ReadAllText(path + "username");
+                name = File.ReadAllText(path + "username");
             }
+            NameTextBox.Text = name;
         }
 
         private void NewTimerBtn_Click(object sender, RoutedEventArgs e)
@@ -54,24 +71,17 @@ namespace OverlayTimer
 
         private void NameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (NameTextBox.IsFocused == true)
+            if (NameTextBox.IsFocused)
             {
-                string name = NameTextBox.Text;
-                if (CharactersAllowed(name))
+                if (NameTextBox.Text.ToLower() == File.ReadAllText(path + "username").ToLower())
                 {
-                    File.WriteAllText(path + "username", name);
+                    CancelInfoBtn.Visibility = Visibility.Collapsed;
+                    SaveInfoBtn.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
-                    try
-                    {
-                        NameTextBox.Text = File.ReadAllText(path + "username");
-                        NameTextBox.CaretIndex = name.Length;
-                    }
-                    catch
-                    {
-                        NameTextBox.Text = "Anonymous";
-                    }
+                    CancelInfoBtn.Visibility = Visibility.Visible;
+                    SaveInfoBtn.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -110,6 +120,80 @@ namespace OverlayTimer
         private void SettingsBtn_Click(object sender, RoutedEventArgs e)
         {
             GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new SettingsPage());
+        }
+
+        private void CancelInfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NameTextBox.Text = "Anonymous";
+            GetUsername();
+            CancelInfoBtn.Visibility = Visibility.Collapsed;
+            SaveInfoBtn.Visibility = Visibility.Collapsed;
+        }
+
+        private void SaveInfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CancelInfoBtn.IsEnabled = false;
+            SaveInfoBtn.IsEnabled = false;
+            NameTextBox.IsEnabled = false;
+            Thread thread = new Thread(VerifyName);
+            thread.Start();
+        }
+
+        private void VerifyName()
+        {
+            string name = string.Empty;
+            Dispatcher.Invoke(new Action(() => name = NameTextBox.Text));
+            if (!CharactersAllowed(name))
+            {
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    GetUsername();
+                    MessageBox.Show("Name contains invalid characters");
+                }));
+            }
+            else if(name.Length > 15 || name.Length < 3 || string.IsNullOrWhiteSpace(name))
+            {
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    GetUsername();
+                    MessageBox.Show("Name is either too short or too long.");
+                }));
+            }
+            else
+            {
+                if (LeaderboardController.IsNameTaken(name))
+                {
+                    Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        GetUsername();
+                        MessageBox.Show("Name is already taken.");
+                    }));
+                }
+                else
+                {
+                    try
+                    {
+                        LeaderboardController.ClaimName(name, File.ReadAllText(path + "key"));
+                        File.WriteAllText(path + "username", name);
+                    }
+                    catch (Exception ex)
+                    {
+                        Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            GetUsername();
+                            MessageBox.Show(ex.Message);
+                        }));
+                    }
+                }
+            }
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                CancelInfoBtn.IsEnabled = true;
+                SaveInfoBtn.IsEnabled = true;
+                NameTextBox.IsEnabled = true;
+                CancelInfoBtn.Visibility = Visibility.Collapsed;
+                SaveInfoBtn.Visibility = Visibility.Collapsed;
+            }));
         }
     }
 }

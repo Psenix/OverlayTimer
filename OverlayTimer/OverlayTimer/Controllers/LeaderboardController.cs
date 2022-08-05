@@ -46,6 +46,39 @@ namespace OverlayTimer
             }
         }
 
+        public static bool IsLinkDuplicate(string link)
+        {
+            try
+            {
+                var response = client.GetAsync("Leaderboard/IsLinkDuplicate?link=" + link).Result;
+                var content = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<bool>(content);
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static bool IsNameTaken(string name)
+        {
+            try
+            {
+                var response = client.GetAsync("Leaderboard/IsNameTaken?name=" + name).Result;
+                var content = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<bool>(content);
+            }
+            catch
+            {
+                return true;
+            }
+        }
+
+        public static void ClaimName(string name, string key)
+        {
+            _ = client.GetAsync("Leaderboard/ClaimName?name=" + name + "&key=" + key).Result;
+        }
+
         public static List<Entry> GetLeaderboard(string game)
         {
             try

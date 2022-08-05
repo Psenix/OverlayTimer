@@ -11,7 +11,7 @@ namespace OverlayTimer
     public partial class Timer : Window
     {
         bool userClosed = true;
-        TimeSpan time;
+        DateTime startTime;
         readonly string category;
         readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
         readonly System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -51,25 +51,26 @@ namespace OverlayTimer
             {
                 resetKey = (Key)keyConverter.ConvertFromString(File.ReadAllText(path + "ResetHotkey"));
             }
-
             if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(startStopKey))
             {
                 if (timer.Enabled)
                 {
-                    GlobalVariables.GlobalKeyHook.OnKeyDown -= GlobalKeyHook_OnKeyDown;
+                    var timePassed = DateTime.Now.Subtract(startTime);
                     timer.Stop();
-                    SubmitPage submitPage = new SubmitPage(time, category);
+                    GlobalVariables.GlobalKeyHook.OnKeyDown -= GlobalKeyHook_OnKeyDown;
+                    SubmitPage submitPage = new SubmitPage(timePassed, category);
                     MainWindow main = GlobalXAML.MainWindow;
                     main.MainFrame.Navigate(submitPage);
                     main.Show();
                     main.Activate();
                     timerModel.Timer = "00:00:00";
-                    time = new TimeSpan(0, 0, 0);
+                    startTime = new DateTime();
                     userClosed = false;
                     Close();
                 }
                 else
                 {
+                    startTime = DateTime.Now;
                     timer.Start();
                 }
 
@@ -78,24 +79,24 @@ namespace OverlayTimer
             {
                 timer.Stop();
                 timerModel.Timer = "00:00:00";
-                time = new TimeSpan(0, 0, 0);
+                startTime = new DateTime();
             }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            time = time.Add(new TimeSpan(0, 0, 0, 0, 30));
-            if (time < TimeSpan.FromHours(1))
+            var timeSpan = DateTime.Now.Subtract(startTime);
+            if (timeSpan < TimeSpan.FromHours(1))
             {
-                timerModel.Timer = string.Format("{0:mm\\:ss\\:ff}", time);
+                timerModel.Timer = string.Format("{0:mm\\:ss\\:ff}", timeSpan);
             }
-            else if (time < TimeSpan.FromHours(24))
+            else if (timeSpan < TimeSpan.FromHours(24))
             {
-                timerModel.Timer = string.Format("{0:hh\\:mm\\:ss}", time);
+                timerModel.Timer = string.Format("{0:hh\\:mm\\:ss}", timeSpan);
             }
             else
             {
-                string timeStr = ((int)time.TotalHours).ToString() + ":" + string.Format("{0:mm\\:ss}", time);
+                string timeStr = ((int)timeSpan.TotalHours).ToString() + ":" + string.Format("{0:mm\\:ss}", timeSpan);
                 timerModel.Timer = timeStr;
             }
         }

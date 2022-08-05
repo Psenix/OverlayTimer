@@ -67,7 +67,7 @@ namespace OverlayTimer.Pages
             var list = LeaderboardController.GetUnverifiedEntries(token);
             if (list.Count > 0)
             {
-                list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
+                list.Sort((x, y) => DateTime.Compare(x.SubmitDate, y.SubmitDate));
                 foreach (var item in list)
                 {
                     DataEntity entity = new DataEntity(item);

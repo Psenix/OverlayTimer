@@ -44,9 +44,16 @@ namespace OverlayTimer
         {
             if (IsValidURL(VideoLink.Text))
             {
-                PublicBtn.IsEnabled = false;
-                Thread thread = new Thread(UploadEntry);
-                thread.Start();
+                if (!LeaderboardController.IsLinkDuplicate(VideoLink.Text))
+                {
+                    PublicBtn.IsEnabled = false;
+                    Thread thread = new Thread(UploadEntry);
+                    thread.Start();
+                }
+                else
+                {
+                    MessageBox.Show("The entered video link is already uploaded. Please use a different video.");
+                }
             }
             else
             {
@@ -61,22 +68,30 @@ namespace OverlayTimer
                 TimeScore = timeScore,
                 Username = userName,
                 Category = category,
-                SubmitDate = DateTime.UtcNow
+                SubmitDate = DateTime.UtcNow,
+                Key = Guid.Parse(File.ReadAllText(path + "key"))
             };
             Dispatcher.Invoke(new Action(() => entry.VideoLink = VideoLink.Text));
-            Guid result = LeaderboardController.InsertToLeaderboard(entry);
-            if (result != Guid.Empty)
+            if (!LeaderboardController.IsLinkDuplicate(entry.VideoLink))
             {
-                entry.Guid = result;
-                Dispatcher.BeginInvoke(new Action(() =>
+                Guid result = LeaderboardController.InsertToLeaderboard(entry);
+                if (result != Guid.Empty)
                 {
-                    MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
-                    LocalSubmittion(entry);
-                }));
+                    entry.Guid = result;
+                    Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
+                        LocalSubmittion(entry);
+                    }));
+                }
+                else
+                {
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Could not submit your Speedrun. Request Denied.")));
+                }
             }
             else
             {
-                Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Could not submit your Speedrun. Request Denied.")));
+                Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("There is already a speedrun that has your video link. Please enter another one.")));
             }
             Dispatcher.BeginInvoke(new Action(() => PublicBtn.IsEnabled = true));
         }

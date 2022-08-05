@@ -18,5 +18,8 @@ namespace OverlayTimer.Entities
 
         public string VideoLink { get; set; }
 
+        public Guid Key { get; set; }
+
+
     }
 }
