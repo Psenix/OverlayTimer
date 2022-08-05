@@ -22,13 +22,13 @@
 
 Short anwser: Overlay Timer is a timer for speedruns, it renders above your game and after the run you can upload your time and compare it.
 
-![Screenshot1](https://user-images.githubusercontent.com/85057723/182205425-ad7cbb4a-5af8-4daf-b7e0-950a495e5dcc.PNG)
+![image](https://user-images.githubusercontent.com/85057723/183130109-532cc115-98af-4a4c-adcf-4a494ff019e7.png)
 
 # How does Overlay Timer work
 
 - Create a new Timer and select a category(game). 
 - Your game isn´t there? Write us a message on our [Discord server](https://discord.gg/qVhbBrtKzr) and we´ll probably add your game.
-- Now you can start/stop the timer with NumPad0 and reset it with NumPad9 if you need to.
+- Now you can start/stop the timer with NumPad0 and reset it with NumPad9 if you need to (Hotkeys can be changed).
 - The timer will be rendered over your game.
 - The Hotkeys for start/stop/reset work regardless of the focussed window.
 - After the run you can save your time publicly or locally!
@@ -54,7 +54,7 @@ Kurzgesagt: Overlay Timer ist ein Timer für Speedruns, der über deinem fokussi
 
 - Erstelle einen neuen Timer und trage deine Kategorie(Spiel) ein. 
 - Dein Spiel ist nicht dabei? Schreib uns auf unseren [Discord Server](https://discord.gg/qVhbBrtKzr) und wir fügen es vemutlich hinzu.
-- Nun kannst du den Timer mit NumPad 0 starten/stoppen und mit NumPad 9 zurücksetzen falls nötig.
+- Nun kannst du den Timer mit NumPad 0 starten/stoppen und mit NumPad 9 zurücksetzen falls nötig (Tasten können angepasst werden).
 - Der Timer wird über dem Game gerendert.
 - Die Hotkeys für start und stop funktionieren unabhängig vom fokusierten Fenster.
 - Nach dem Run kannst du deine Zeit öffentlich oder privat speichern! 
