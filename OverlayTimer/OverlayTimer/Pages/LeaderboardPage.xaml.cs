@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -35,10 +36,17 @@ namespace OverlayTimer.Pages
             Dictionary<string, string> games = GamesController.GetGames();
             Dispatcher.BeginInvoke(new Action(() =>
             {
-                Games.Items.RemoveAt(0);
-                foreach (var game in games)
+                try
                 {
-                    Games.Items.Add(new ComboBoxItem() { Content = game.Key });
+                    Games.Items.RemoveAt(0);
+                    foreach (var game in games)
+                    {
+                        Games.Items.Add(new ComboBoxItem() { Content = game.Key });
+                    }
+                }
+                catch
+                {
+                    Games.Items.Add(new ComboBoxItem() { Content = "Could not fetch data", IsEnabled = false });
                 }
             }));
         }
@@ -141,14 +149,34 @@ namespace OverlayTimer.Pages
             if (items.Count > 0)
             {
                 var item = (DataEntity)e.AddedItems[0];
-                if (Mouse.RightButton == MouseButtonState.Pressed && File.Exists(path + "token"))
+                if (Mouse.RightButton == MouseButtonState.Pressed)
                 {
-                    var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), File.ReadAllText(path + "token"));
-                    var result = MessageBox.Show("Click 'ok' to delete this run from the database", "Delete", MessageBoxButton.OKCancel);
-                    if (result == MessageBoxResult.OK)
+                    if (LocalPublic.Text == "Local")
                     {
-                        LeaderboardController.DeleteEntry(guid.ToString(), item.Name);
-                        Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+                        var result = MessageBox.Show("Click 'OK' to delete this run locally.", "Delete", MessageBoxButton.OKCancel);
+                        if (result == MessageBoxResult.OK)
+                        {
+                            var entries = File.ReadAllLines(path + Games.Text).ToList();
+                            for (int i = 0; i < entries.Count; i++)
+                            {
+                                if (item.Entry.ID == JsonConvert.DeserializeObject<Entry>(entries[i]).ID)
+                                {
+                                    entries.RemoveAt(i);
+                                }
+                            }
+                            File.WriteAllLines(path + Games.Text, entries);
+                            Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+                        }
+                    }
+                    else if (File.Exists(path + "token"))
+                    {
+                        var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), File.ReadAllText(path + "token"));
+                        var result = MessageBox.Show("Click 'OK' to delete this run from the database.", "Delete", MessageBoxButton.OKCancel);
+                        if (result == MessageBoxResult.OK)
+                        {
+                            LeaderboardController.DeleteEntry(guid.ToString(), item.Name);
+                            Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+                        }
                     }
                 }
                 else if (!string.IsNullOrWhiteSpace(item.VideoLink))

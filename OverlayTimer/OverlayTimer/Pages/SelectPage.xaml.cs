@@ -35,15 +35,22 @@ namespace OverlayTimer
 
         private void GetAvailableGames()
         {
-            games = GamesController.GetGames();
-            Dispatcher.BeginInvoke(new Action(() =>
+            try
             {
-                Options.Items.RemoveAt(0);
-                foreach (var game in games)
+                games = GamesController.GetGames();
+                Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    Options.Items.Add(new ComboBoxItem() { Content = game.Key });
-                }
-            }));
+                    Options.Items.RemoveAt(0);
+                    foreach (var game in games)
+                    {
+                        Options.Items.Add(new ComboBoxItem() { Content = game.Key });
+                    }
+                }));
+            }
+            catch
+            {
+                Options.Items.Add(new ComboBoxItem() { Content = "Could not fetch data", IsEnabled = false });
+            }
         }
 
         private void Options_SelectionChanged(object sender, SelectionChangedEventArgs e)

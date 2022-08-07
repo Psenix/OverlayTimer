@@ -4,9 +4,9 @@ namespace OverlayTimer.Entities
 {
     public class Entry
     {
-        public Guid Guid { get; set; }
-
         public Guid ID { get; set; }
+
+        public Guid SecretID { get; set; }
 
         public string Username { get; set; }
 
@@ -18,7 +18,7 @@ namespace OverlayTimer.Entities
 
         public string VideoLink { get; set; }
 
-        public Guid Key { get; set; }
+        public Guid UsernameKey { get; set; }
 
 
     }

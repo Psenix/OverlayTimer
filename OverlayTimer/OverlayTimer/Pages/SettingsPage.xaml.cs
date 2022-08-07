@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace OverlayTimer.Pages
 {
-    /// <summary>
-    /// Interaction logic for SettingsPage.xaml
-    /// </summary>
     public partial class SettingsPage : Page
     {
         bool programmatically = true;

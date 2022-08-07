@@ -90,6 +90,7 @@
     <Compile Include="Pages\SubmitPage.xaml.cs">
       <DependentUpon>SubmitPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utils\DiscordRPC.cs" />
     <Compile Include="Windows\Timer.xaml.cs">
       <DependentUpon>Timer.xaml</DependentUpon>
     </Compile>
@@ -167,6 +168,9 @@
       <Version>5.7.0</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="DiscordRichPresence">
+      <Version>1.0.175</Version>
     </PackageReference>
     <PackageReference Include="Indieteur.GlobalHooks">
       <Version>1.0.0</Version>

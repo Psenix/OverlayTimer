@@ -69,7 +69,7 @@ namespace OverlayTimer
                 Username = userName,
                 Category = category,
                 SubmitDate = DateTime.UtcNow,
-                Key = Guid.Parse(File.ReadAllText(path + "key"))
+                UsernameKey = Guid.Parse(File.ReadAllText(path + "key"))
             };
             Dispatcher.Invoke(new Action(() => entry.VideoLink = VideoLink.Text));
             if (!LeaderboardController.IsLinkDuplicate(entry.VideoLink))
@@ -77,7 +77,7 @@ namespace OverlayTimer
                 Guid result = LeaderboardController.InsertToLeaderboard(entry);
                 if (result != Guid.Empty)
                 {
-                    entry.Guid = result;
+                    entry.ID = result;
                     Dispatcher.BeginInvoke(new Action(() =>
                     {
                         MessageBox.Show("Your speedrun will be displayed publicly as soon as a moderator approves it.", "Successfully submitted");
@@ -113,7 +113,7 @@ namespace OverlayTimer
                 VideoLink = VideoLink.Text,
                 Category = category,
                 SubmitDate = DateTime.UtcNow,
-                Guid = Guid.NewGuid()
+                ID = Guid.NewGuid()
             };
             LocalSubmittion(entry);
         }

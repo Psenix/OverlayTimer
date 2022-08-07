@@ -1,5 +1,7 @@
-﻿using OverlayTimer.Global;
+﻿using DiscordRPC;
+using OverlayTimer.Global;
 using OverlayTimer.Pages;
+using OverlayTimer.Utils;
 using System;
 using System.IO;
 using System.Windows;
@@ -14,6 +16,7 @@ namespace OverlayTimer
         public MainWindow()
         {
             InitializeComponent();
+            RPC.Initialize();
             Directory.CreateDirectory(path);
             if (!File.Exists(path + "username"))
             {
@@ -26,6 +29,7 @@ namespace OverlayTimer
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             e.Cancel = true;
+            RPC.Deinitialize();
             Environment.Exit(0);
         }
 

@@ -19,9 +19,6 @@ using System.Windows.Shapes;
 
 namespace OverlayTimer.Pages
 {
-    /// <summary>
-    /// Interaction logic for HandleRun.xaml
-    /// </summary>
     public partial class EditEntryPage : Page
     {
 
@@ -103,7 +100,13 @@ namespace OverlayTimer.Pages
         private TimeSpan GetTimeSpan()
         {
             TimeSpan timeSpan = new TimeSpan();
-            Dispatcher.Invoke(new Action(() => timeSpan = new TimeSpan(0, Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text), Convert.ToInt32(Milliseconds.Text))));
+            string milliseconds = string.Empty;
+            Dispatcher.Invoke(new Action(() => milliseconds = Milliseconds.Text));
+            while (milliseconds.Length < 3)
+            {
+                milliseconds = milliseconds + "0";
+            }
+            Dispatcher.Invoke(new Action(() => timeSpan = new TimeSpan(0, Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text), Convert.ToInt32(milliseconds))));
             return timeSpan;
         }
 
@@ -136,7 +139,7 @@ namespace OverlayTimer.Pages
 
         private void DeleteEntry()
         {
-            LeaderboardController.DeleteEntry(item.Guid.ToString(), item.Username);
+            LeaderboardController.DeleteEntry(item.ID.ToString(), item.Username);
             Dispatcher.BeginInvoke(new Action(() => GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack()));
         }
     }

@@ -1,5 +1,6 @@
 ﻿using Indieteur.GlobalHooks;
 using OverlayTimer.Global;
+using OverlayTimer.Utils;
 using System;
 using System.IO;
 using System.Windows;
@@ -58,6 +59,9 @@ namespace OverlayTimer
                     var timePassed = DateTime.Now.Subtract(startTime);
                     timer.Stop();
                     GlobalVariables.GlobalKeyHook.OnKeyDown -= GlobalKeyHook_OnKeyDown;
+                    RPC.UpdateDetails("In Menu");
+                    RPC.UpdateState(string.Empty);
+                    RPC.HideTime();
                     SubmitPage submitPage = new SubmitPage(timePassed, category);
                     MainWindow main = GlobalXAML.MainWindow;
                     main.MainFrame.Navigate(submitPage);
@@ -72,6 +76,9 @@ namespace OverlayTimer
                 {
                     startTime = DateTime.Now;
                     timer.Start();
+                    RPC.UpdateDetails("Speedrunning: ");
+                    RPC.UpdateState(category);
+                    RPC.ShowTime();
                 }
 
             }
