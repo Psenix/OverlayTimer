@@ -5,15 +5,16 @@
 </p>
 
 #
-![Contributors](https://img.shields.io/github/contributors/Psenix/OverlayTimer.svg?style=for-the-badge)
 ![Forks](https://img.shields.io/github/forks/Psenix/OverlayTimer.svg?style=for-the-badge)
 ![Stargazers](https://img.shields.io/github/stars/Psenix/OverlayTimer.svg?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/Psenix/OverlayTimer.svg?color=ff69b4&style=for-the-badge)
 ![MIT License](https://img.shields.io/github/license/Psenix/OverlayTimer.svg?style=for-the-badge)
 ![Open Issues](https://img.shields.io/github/issues-raw/Psenix/OverlayTimer.svg?style=for-the-badge)
 ![Closed Issues](https://img.shields.io/github/issues-closed-raw/Psenix/OverlayTimer.svg?style=for-the-badge)
 ![GitHub repo size](https://img.shields.io/github/repo-size/Psenix/OverlayTimer.svg?style=for-the-badge)
+![Downloads](https://img.shields.io/github/downloads/psenix/overlaytimer/latest/total?color=purple&style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-windows-blue.svg?style=for-the-badge&color=0cf)
 ![Commits](https://img.shields.io/github/commit-activity/y/Psenix/OverlayTimer.svg?style=for-the-badge)
-![Platform](https://img.shields.io/badge/platform-windows-blue.svg?style=for-the-badge)
 
 
 ## [English Version]
