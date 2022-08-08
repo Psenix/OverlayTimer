@@ -1,4 +1,4 @@
-![Banner](https://user-images.githubusercontent.com/85057723/182202810-b5b3853c-0aa1-49af-a001-6da8741be3ad.png)
+![182202810-b5b3853c-0aa1-49af-a001-6da8741be3ad](https://user-images.githubusercontent.com/85057723/183437173-8c39ca99-96e3-44ab-8597-676dc85f6961.png)
 # 
 <p align="center">
   <a href="https://github.com/Psenix/OverlayTimer/releases/download/v1.0/OverlayTimer-Installer.exe"><img src="https://raw.githubusercontent.com/hictooth/WildSkies/master/button_download-windows.png" /></a>
