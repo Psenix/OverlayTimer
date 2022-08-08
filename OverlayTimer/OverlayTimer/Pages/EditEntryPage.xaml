@@ -9,7 +9,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="EditEntryPage">
 
-    <Grid>
+    <Grid x:Name="Grid" Loaded="Grid_Loaded" Focusable="True" KeyDown="Grid_KeyDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -68,18 +68,22 @@
                 </ResourceDictionary.MergedDictionaries>
             </ResourceDictionary>
         </Grid.Resources>
-        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="8" Grid.Row="11" Grid.Column="6" Grid.RowSpan="3">
-            <TextBox x:Name="Hours" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Hours_TextChanged"/>
-            <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
-            <TextBox x:Name="Minutes" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Minutes_TextChanged"/>
-            <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
-            <TextBox x:Name="Seconds" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Seconds_TextChanged"/>
-            <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
-            <TextBox x:Name="Milliseconds" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Milliseconds_TextChanged"/>
-        </StackPanel>
-
+        <Viewbox Grid.ColumnSpan="8" Grid.RowSpan="2" Grid.Row="12" Grid.Column="6" Stretch="Uniform">
+            <StackPanel Orientation="Horizontal">
+                <TextBox x:Name="Hours" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Hours_TextChanged"/>
+                <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
+                <TextBox x:Name="Minutes" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Minutes_TextChanged"/>
+                <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
+                <TextBox x:Name="Seconds" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Seconds_TextChanged"/>
+                <Label Content=":" Margin="5,0" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" Foreground="White"/>
+                <TextBox x:Name="Milliseconds" VerticalAlignment="Center" Width="50" Height="40" TextAlignment="Center" Background="Transparent" CaretBrush="White" FontSize="25" Foreground="White" BorderThickness="0.5" TextChanged="Milliseconds_TextChanged"/>
+            </StackPanel>
+        </Viewbox>
         <Viewbox Grid.Column="5" Grid.ColumnSpan="10" Grid.Row="2" Grid.RowSpan="2" Stretch="Uniform">
-            <TextBlock x:Name="TitleTextBox" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+            <TextBlock x:Name="TitleTextBlock" TextAlignment="Center" FontWeight="Bold" Foreground="White"/>
+        </Viewbox>
+        <Viewbox Grid.Column="5" Grid.ColumnSpan="10" Grid.Row="6" Grid.RowSpan="2" Stretch="Uniform">
+            <TextBlock x:Name="CategoryTextBlock" TextAlignment="Center" FontWeight="Normal" TextDecorations="Underline" Foreground="White"/>
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="20" Grid.RowSpan="2" Grid.ColumnSpan="3" Stretch="Uniform">
             <Button x:Name="DeleteButton" Content="Delete" BorderThickness="0" Background="Red" Click="DeleteButton_Click"/>
@@ -88,7 +92,7 @@
             <Button x:Name="AcceptButton" Content="Approve" BorderThickness="0" Click="AcceptButton_Click"/>
         </Viewbox>
         <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
-            <Button x:Name="BackButton" Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackButton_Click"/>
+            <Button x:Name="BackBtn" Background="Transparent" Foreground="White" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
         </Viewbox>
     </Grid>
 </Page>

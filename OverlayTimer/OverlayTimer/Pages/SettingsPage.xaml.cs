@@ -1,88 +1,99 @@
-﻿using OverlayTimer.Global;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OverlayTimer.Properties;
+using OverlayTimer.Utils;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace OverlayTimer.Pages
 {
     public partial class SettingsPage : Page
     {
-        bool programmatically = true;
-        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
         Key startStopKey;
         Key resetKey;
 
         public SettingsPage()
         {
             InitializeComponent();
-            if(File.Exists(path + "ResetHotkey"))
-            {
-                ResetText.Text = File.ReadAllText(path + "ResetHotkey");
-            }
-            if(File.Exists(path + "StartStopHotkey"))
-            {
-                StartStopText.Text = File.ReadAllText(path + "StartStopHotkey");
-            }
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            this.NavigationService.GoBack();
         }
 
         private void StartStopText_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.DeadCharProcessedKey == Key.None)
             {
-                programmatically = true;
+                StartStopText.TextChanged -= StartStopText_TextChanged;
                 startStopKey = e.Key;
                 StartStopText.Text = startStopKey.ToString();
-                File.WriteAllText(path + "StartStopHotkey", startStopKey.ToString());
+                Settings.Default.StartStopHotkey = startStopKey.ToString();
+                Settings.Default.Save();
+                StartStopText.TextChanged += StartStopText_TextChanged;
             }
-            programmatically = false;
         }
 
         private void StartStopText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if(programmatically == false)
-            {
-                programmatically = true;
+            if (StartStopText.IsFocused)
                 StartStopText.Text = startStopKey.ToString();
-                programmatically = false;
-            }
         }
 
         private void ResetText_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (e.DeadCharProcessedKey == Key.None)
             {
-                programmatically = true;
                 resetKey = e.Key;
                 ResetText.Text = resetKey.ToString();
-                File.WriteAllText(path + "ResetHotkey", resetKey.ToString());
+                Settings.Default.ResetHotkey = resetKey.ToString();
+                Settings.Default.Save();
             }
-            programmatically = false;
         }
 
         private void ResetText_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (programmatically == false)
-            {
-                programmatically = true;
+            if (ResetText.IsFocused)
                 ResetText.Text = resetKey.ToString();
-                programmatically = false;
+        }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (DiscordRPC.IsFocused)
+            {
+                RPC.Initialize();
+                Settings.Default.DiscordRPC = true;
+                Settings.Default.Save();
+            }
+        }
+
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (DiscordRPC.IsFocused)
+            {
+                RPC.Deinitialize();
+                Settings.Default.DiscordRPC = false;
+                Settings.Default.Save();
+            }
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            StartStopText.Text = Settings.Default.StartStopHotkey;
+            ResetText.Text = Settings.Default.ResetHotkey;
+            DiscordRPC.IsChecked = Settings.Default.DiscordRPC;
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid.Focus();
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.NavigationService.GoBack();
             }
         }
     }

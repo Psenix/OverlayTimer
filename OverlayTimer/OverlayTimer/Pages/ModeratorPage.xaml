@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800" 
-      Title="ModeratorPage" Loaded="Page_Loaded_1">
+      Title="ModeratorPage" Loaded="Page_Loaded">
 
     <Page.Resources>
         <Style x:Key="VerticalSeparatorStyle" TargetType="{x:Type Separator}" BasedOn="{StaticResource {x:Type Separator}}">
@@ -24,7 +24,7 @@
             </Setter>
         </Style>
     </Page.Resources>
-    <Grid>
+    <Grid x:Name="Grid" Loaded="Grid_Loaded" Focusable="True" KeyDown="Grid_KeyDown">
         <Grid x:Name="LoginGrid" Visibility="Collapsed">
             <Grid.Resources>
                 <ResourceDictionary>

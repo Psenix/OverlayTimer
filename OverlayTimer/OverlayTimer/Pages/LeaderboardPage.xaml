@@ -23,7 +23,7 @@
         </Style>
     </Page.Resources>
 
-    <Grid>
+    <Grid x:Name="Grid" Loaded="Grid_Loaded" Focusable="True" KeyDown="Grid_KeyDown">
         <Grid.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>

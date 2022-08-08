@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using OverlayTimer.Controllers;
 using OverlayTimer.Entities;
-using OverlayTimer.Global;
 using OverlayTimer.Models;
+using OverlayTimer.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,7 +19,7 @@ namespace OverlayTimer.Pages
 {
     public partial class LeaderboardPage : Page
     {
-        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
+        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\LocalLeaderboard\\";
         readonly DataModel dataModel = new DataModel();
 
         public LeaderboardPage()
@@ -132,12 +132,12 @@ namespace OverlayTimer.Pages
                 }
                 else if (selectedItem != "Select a game")
                 {
-                        NoRuns.Visibility = Visibility.Visible;
+                    NoRuns.Visibility = Visibility.Visible;
                 }
             }
             else if (selectedItem != "Select a game")
             {
-                    NoRuns.Visibility = Visibility.Visible;
+                NoRuns.Visibility = Visibility.Visible;
             }
         }
 
@@ -168,9 +168,9 @@ namespace OverlayTimer.Pages
                             Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
                         }
                     }
-                    else if (File.Exists(path + "token"))
+                    else if (!string.IsNullOrWhiteSpace(Settings.Default.AdminToken))
                     {
-                        var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), File.ReadAllText(path + "token"));
+                        var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), Settings.Default.AdminToken);
                         var result = MessageBox.Show("Click 'OK' to delete this run from the database.", "Delete", MessageBoxButton.OKCancel);
                         if (result == MessageBoxResult.OK)
                         {
@@ -189,7 +189,7 @@ namespace OverlayTimer.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            this.NavigationService.GoBack();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -199,7 +199,7 @@ namespace OverlayTimer.Pages
             dataModel.Data.Clear();
             LeaderboardList.Items.Refresh();
             LocalPublic.Text = "Public";
-            NoRuns.Visibility = Visibility.Collapsed; 
+            NoRuns.Visibility = Visibility.Collapsed;
         }
 
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
@@ -214,6 +214,19 @@ namespace OverlayTimer.Pages
                 scrollViewer.LineUp();
             }
             e.Handled = true;
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid.Focus();
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }

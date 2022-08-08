@@ -1,5 +1,7 @@
 ﻿using OverlayTimer.Global;
 using OverlayTimer.Pages;
+using OverlayTimer.Properties;
+using OverlayTimer.Utils;
 using System;
 using System.IO;
 using System.Threading;
@@ -14,39 +16,41 @@ namespace OverlayTimer
     {
         readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
         readonly LeaderboardPage leaderboardPage = new LeaderboardPage();
+        readonly SettingsPage settingsPage = new SettingsPage();
 
         public MainPage()
         {
             InitializeComponent();
+            Directory.CreateDirectory(path);
+            Directory.CreateDirectory(path + "LocalLeaderboard");
+            InitializeRTC();
+            GenerateUserID();
+            NameTextBox.Text = Settings.Default.Username;
             GlobalXAML.MainPage = this;
-            GetUsername();
-            GenerateKey();
         }
 
-        private void GenerateKey()
+        private void InitializeRTC()
         {
-            if (!File.Exists(path + "key"))
-            {
-                File.WriteAllText(path + "key", Guid.NewGuid().ToString());
-            }
+            if (Settings.Default.DiscordRPC)
+                RPC.Initialize();
         }
 
-        private void GetUsername()
+        private void GenerateUserID()
         {
-            var name = "Anonymous";
-            if (File.Exists(path + "username"))
+            if (Settings.Default.UserID == Guid.Empty)
             {
-                name = File.ReadAllText(path + "username");
+                Settings.Default.UserID = Guid.NewGuid();
+                Settings.Default.Save();
             }
-            NameTextBox.Text = name;
+
         }
 
         private void NewTimerBtn_Click(object sender, RoutedEventArgs e)
         {
-            string name = File.ReadAllText(path + "username");
-            if (IsValidName(name))
+            if (IsValidName(Settings.Default.Username))
             {
-                GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new SelectPage());
+                this.NavigationService.Navigate(new SelectPage());
+                GC.Collect();
             }
             else
             {
@@ -73,7 +77,7 @@ namespace OverlayTimer
         {
             if (NameTextBox.IsFocused)
             {
-                if (NameTextBox.Text.ToLower() == File.ReadAllText(path + "username").ToLower())
+                if (NameTextBox.Text.ToLower() == Settings.Default.Username.ToLower())
                 {
                     CancelInfoBtn.Visibility = Visibility.Collapsed;
                     SaveInfoBtn.Visibility = Visibility.Collapsed;
@@ -100,7 +104,8 @@ namespace OverlayTimer
 
         private void LeaderboardBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.Navigate(leaderboardPage);
+            this.NavigationService.Navigate(leaderboardPage);
+            GC.Collect();
         }
 
 
@@ -108,7 +113,8 @@ namespace OverlayTimer
         {
             if (Keyboard.IsKeyDown(Key.LeftCtrl) && Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.E))
             {
-                GlobalXAML.MainWindow.MainFrame.Navigate(new ModeratorPage());
+                this.NavigationService.Navigate(new ModeratorPage());
+                GC.Collect();
             }
         }
 
@@ -119,13 +125,14 @@ namespace OverlayTimer
 
         private void SettingsBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new SettingsPage());
+            this.NavigationService.Navigate(settingsPage);
+            GC.Collect();
         }
 
         private void CancelInfoBtn_Click(object sender, RoutedEventArgs e)
         {
             NameTextBox.Text = "Anonymous";
-            GetUsername();
+            NameTextBox.Text = Settings.Default.Username;
             CancelInfoBtn.Visibility = Visibility.Collapsed;
             SaveInfoBtn.Visibility = Visibility.Collapsed;
         }
@@ -147,15 +154,15 @@ namespace OverlayTimer
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    GetUsername();
+                    NameTextBox.Text = Settings.Default.Username;
                     MessageBox.Show("Name contains invalid characters");
                 }));
             }
-            else if(name.Length > 15 || name.Length < 3 || string.IsNullOrWhiteSpace(name))
+            else if (name.Length > 15 || name.Length < 3 || string.IsNullOrWhiteSpace(name))
             {
                 Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    GetUsername();
+                    NameTextBox.Text = Settings.Default.Username;
                     MessageBox.Show("Name is either too short or too long.");
                 }));
             }
@@ -165,7 +172,7 @@ namespace OverlayTimer
                 {
                     Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        GetUsername();
+                        NameTextBox.Text = Settings.Default.Username;
                         MessageBox.Show("Name is already taken.");
                     }));
                 }
@@ -173,14 +180,15 @@ namespace OverlayTimer
                 {
                     try
                     {
-                        LeaderboardController.ClaimName(name, File.ReadAllText(path + "key"));
-                        File.WriteAllText(path + "username", name);
+                        LeaderboardController.ClaimName(name, Settings.Default.UserID.ToString());
+                        Settings.Default.Username = name;
+                        Settings.Default.Save();
                     }
                     catch (Exception ex)
                     {
                         Dispatcher.BeginInvoke(new Action(() =>
                         {
-                            GetUsername();
+                            NameTextBox.Text = Settings.Default.Username;
                             MessageBox.Show(ex.Message);
                         }));
                     }

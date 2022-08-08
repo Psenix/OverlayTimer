@@ -1,21 +1,10 @@
 ﻿using OverlayTimer.Entities;
-using OverlayTimer.Global;
+using OverlayTimer.Properties;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace OverlayTimer.Pages
 {
@@ -23,18 +12,18 @@ namespace OverlayTimer.Pages
     {
 
         readonly Entry item;
-        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
 
         public EditEntryPage(Entry item_)
         {
             InitializeComponent();
             this.item = item_;
-            TitleTextBox.Text = item.Username + "'s Speedrun";
+            TitleTextBlock.Text = item.Username + "'s Speedrun:";
+            CategoryTextBlock.Text = item.Category;
             Hours.Text = (item.TimeScore.Days * 24 + item.TimeScore.Hours).ToString();
             Minutes.Text = item.TimeScore.Minutes.ToString();
             Seconds.Text = item.TimeScore.Seconds.ToString();
             string milliseconds = item.TimeScore.Milliseconds.ToString();
-            while(milliseconds.Length < 3)
+            while (milliseconds.Length < 3)
             {
                 milliseconds = "0" + milliseconds;
             }
@@ -104,15 +93,15 @@ namespace OverlayTimer.Pages
             Dispatcher.Invoke(new Action(() => milliseconds = Milliseconds.Text));
             while (milliseconds.Length < 3)
             {
-                milliseconds = milliseconds + "0";
+                milliseconds += "0";
             }
             Dispatcher.Invoke(new Action(() => timeSpan = new TimeSpan(0, Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text), Convert.ToInt32(milliseconds))));
             return timeSpan;
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            this.NavigationService.GoBack();
         }
 
         private void AcceptButton_Click(object sender, RoutedEventArgs e)
@@ -125,8 +114,8 @@ namespace OverlayTimer.Pages
         private void VerifyEntry()
         {
             item.TimeScore = GetTimeSpan();
-            LeaderboardController.VerifyEntry(item, File.ReadAllText(path + "token"));
-            Dispatcher.BeginInvoke(new Action(() => GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack()));
+            LeaderboardController.VerifyEntry(item, Settings.Default.AdminToken);
+            Dispatcher.BeginInvoke(new Action(() => this.NavigationService.GoBack()));
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -139,8 +128,21 @@ namespace OverlayTimer.Pages
 
         private void DeleteEntry()
         {
-            LeaderboardController.DeleteEntry(item.ID.ToString(), item.Username);
-            Dispatcher.BeginInvoke(new Action(() => GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack()));
+            LeaderboardController.DeleteEntry(item.SecretID.ToString(), item.Username);
+            Dispatcher.BeginInvoke(new Action(() => this.NavigationService.GoBack()));
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid.Focus();
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }

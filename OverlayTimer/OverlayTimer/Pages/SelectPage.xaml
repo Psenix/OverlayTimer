@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:OverlayTimer"
         mc:Ignorable="d"
        d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid  x:Name="Grid" Loaded="Grid_Loaded" Focusable="True" KeyDown="Grid_KeyDown">
         <Grid.Resources>
             <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
@@ -44,7 +44,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.RowSpan="2" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
-            <Button Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="Button_Click"/>
+            <Button x:Name="BackBtn" Foreground="White" Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
         </Viewbox>
         <Viewbox Grid.Column="3" Grid.ColumnSpan="4" Grid.Row="0" Grid.RowSpan="2" Stretch="Uniform">
             <TextBlock  VerticalAlignment="Bottom" TextAlignment="Center" Text="Choose the category" FontWeight="Bold" Foreground="White"/>

@@ -1,9 +1,4 @@
 ﻿using DiscordRPC;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OverlayTimer.Utils
 {
@@ -29,30 +24,35 @@ namespace OverlayTimer.Utils
                     LargeImageKey = "https://i.imgur.com/neqKcTu.png",
                     LargeImageText = "Psenix's Overlay Timer",
                 }
-            }); 
+            });
         }
         public static void Deinitialize()
         {
-            client.Dispose();
+            if (client != null && client.IsInitialized)
+                client.Dispose();
         }
 
         public static void UpdateDetails(string details)
         {
-            client.UpdateDetails(details);
+            if (client != null && client.IsInitialized)
+                client.UpdateDetails(details);
         }
 
         public static void UpdateState(string state)
         {
-            client.UpdateState(state);
+            if (client != null && client.IsInitialized)
+                client.UpdateState(state);
         }
         public static void ShowTime()
         {
-            client.UpdateStartTime();
+            if (client != null && client.IsInitialized)
+                client.UpdateStartTime();
         }
 
         public static void HideTime()
         {
-            client.UpdateClearTime();
+            if (client != null && client.IsInitialized)
+                client.UpdateClearTime();
         }
     }
 }

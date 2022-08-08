@@ -6,9 +6,9 @@
       xmlns:local="clr-namespace:OverlayTimer.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsPage">
+      Title="SettingsPage" Loaded="Page_Loaded">
 
-    <Grid>
+    <Grid x:Name="Grid" Loaded="Grid_Loaded" Focusable="True" KeyDown="Grid_KeyDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -57,36 +57,47 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.Resources>
-            <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Grid.Resources>
-        <Viewbox Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="7" Grid.RowSpan="2" Stretch="Uniform" HorizontalAlignment="Left">
-            <TextBlock Text="Hotkeys" FontWeight="Bold" Foreground="White"/>
+        <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" Margin="15 0 0 0">
+            <Viewbox.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Viewbox.Resources>
+            <Button x:Name="BackBtn" Background="Transparent" BorderThickness="0" Foreground="White" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
         </Viewbox>
-        <Viewbox Grid.Column="6" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="3" Stretch="Uniform">
-            <TextBlock  VerticalAlignment="Bottom" TextAlignment="Center" Text="Settings" FontWeight="Bold" Foreground="White"/>
-        </Viewbox>
-        <Viewbox Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left">
-            <TextBlock Text="Start/Stop" Foreground="White"/>
-        </Viewbox>
-        <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
-            <Button x:Name="BackBtn" Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
-        </Viewbox>
-        <Viewbox Grid.Row="11" Grid.RowSpan="2" Grid.Column="8" Grid.ColumnSpan="2">
-            <TextBox x:Name="StartStopText" Text="NumPad0" CaretBrush="Transparent" TextAlignment="Center" MinWidth="25" Foreground="White" PreviewKeyDown="StartStopText_PreviewKeyDown" TextChanged="StartStopText_TextChanged"/>
-        </Viewbox>
-        <Viewbox Grid.Column="3" Grid.Row="15" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left">
-            <TextBlock Text="Reset       " Foreground="White"/>
-        </Viewbox>
-        <Viewbox Grid.Row="15" Grid.RowSpan="2" Grid.Column="8" Grid.ColumnSpan="2">
-            <TextBox x:Name="ResetText" Text="NumPad9" Foreground="White" TextAlignment="Center" MinWidth="25" CaretBrush="Transparent" TextChanged="ResetText_TextChanged" PreviewKeyDown="ResetText_PreviewKeyDown"/>
-        </Viewbox>
+        <TextBlock VerticalAlignment="Bottom" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="1" Grid.RowSpan="3" TextDecorations="Underline" FontSize="45" TextAlignment="Center" Text="Settings" FontWeight="Bold" Foreground="White"/>
+        <ScrollViewer Background="Transparent" VerticalScrollBarVisibility="Auto" BorderThickness="0" Grid.ColumnSpan="17" Grid.Column="5" Grid.Row="7" Grid.RowSpan="17">
+            <StackPanel>
+                <StackPanel.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Teal.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Indigo.xaml" />
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </StackPanel.Resources>
+                <TextBlock Text="Hotkeys" FontWeight="DemiBold" FontSize="30" Foreground="White" Margin="0 0 0 50"/>
+                <StackPanel Margin="30 0 0 40" Orientation="Horizontal">
+                    <TextBlock Text="Start/Stop" Margin="0 5 0 0" FontSize="22" Width="220" Foreground="White" Grid.Row="1"/>
+                    <TextBox x:Name="StartStopText" SelectionBrush="Transparent" FontSize="22" Text="NumPad0" Grid.Column="2" Grid.Row="4" CaretBrush="Transparent" TextAlignment="Center" MinWidth="25" Foreground="White" PreviewKeyDown="StartStopText_PreviewKeyDown" TextChanged="StartStopText_TextChanged"/>
+                </StackPanel>
+                <StackPanel Margin="30 0 0 40" Orientation="Horizontal">
+                    <TextBlock Text="Reset" Margin="0 5 0 0" FontSize="22" Foreground="White" Width="220"/>
+                    <TextBox x:Name="ResetText" SelectionBrush="Transparent" FontSize="22" Text="NumPad9" Foreground="White" TextAlignment="Center" MinWidth="25" CaretBrush="Transparent" TextChanged="ResetText_TextChanged" PreviewKeyDown="ResetText_PreviewKeyDown"/>
+                </StackPanel>
+                <TextBlock Text="Discord RPC" FontSize="25" Margin="0 10 0 50" FontWeight="DemiBold" Foreground="White"/>
+                <StackPanel Margin="30 0 0 0" Orientation="Horizontal">
+                    <TextBlock Text="Show activity in Discord" FontSize="16" Width="220" Foreground="White"/>
+                    <ToggleButton x:Name="DiscordRPC" Margin="0 0 0 30" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="True" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

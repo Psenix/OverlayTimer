@@ -6,6 +6,6 @@
 
         public static MainWindow MainWindow;
 
-        public static Timer Timer;
+        public static TimerWindow Timer;
     }
 }

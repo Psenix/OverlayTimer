@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using OverlayTimer.Entities;
 using OverlayTimer.Global;
+using OverlayTimer.Properties;
 using System;
 using System.IO;
 using System.Linq;
@@ -16,12 +17,12 @@ namespace OverlayTimer
         readonly TimeSpan timeScore = TimeSpan.Zero;
         readonly string userName = string.Empty;
         readonly string category = string.Empty;
-        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\";
+        readonly string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\OverlayTimer\\LocalLeaderboard\\";
 
         public SubmitPage(TimeSpan timeScore_, string category_)
         {
             InitializeComponent();
-            userName = File.ReadAllText(path + "username");
+            userName = Settings.Default.Username;
             category = category_;
             timeScore = timeScore_;
             Time.Text = "Time: " + FormatTime(timeScore);
@@ -69,7 +70,7 @@ namespace OverlayTimer
                 Username = userName,
                 Category = category,
                 SubmitDate = DateTime.UtcNow,
-                UsernameKey = Guid.Parse(File.ReadAllText(path + "key"))
+                UsernameKey = Settings.Default.UserID
             };
             Dispatcher.Invoke(new Action(() => entry.VideoLink = VideoLink.Text));
             if (!LeaderboardController.IsLinkDuplicate(entry.VideoLink))
@@ -86,7 +87,7 @@ namespace OverlayTimer
                 }
                 else
                 {
-                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Could not submit your Speedrun. Request Denied.")));
+                    Dispatcher.BeginInvoke(new Action(() => MessageBox.Show("Could not submit your speedrun. Request Denied.")));
                 }
             }
             else
@@ -101,7 +102,8 @@ namespace OverlayTimer
             GC.Collect();
             string entryStr = JsonConvert.SerializeObject(entry);
             File.AppendAllText(path + category, entryStr + Environment.NewLine);
-            GlobalXAML.MainWindow.MainFrame.Navigate(GlobalXAML.MainPage);
+            this.NavigationService.Navigate(GlobalXAML.MainPage);
+            GC.Collect();
         }
 
         private void LocalBtn_Click(object sender, RoutedEventArgs e)
@@ -138,7 +140,12 @@ namespace OverlayTimer
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            var result = MessageBox.Show("Are you sure you want to discard this speedrun?", "Confirmation", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                this.NavigationService.Navigate(GlobalXAML.MainPage);
+                GC.Collect();
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace OverlayTimer
 {
@@ -24,7 +25,7 @@ namespace OverlayTimer
             if (games.ContainsKey(Options.Text))
             {
                 GlobalXAML.MainWindow.Hide();
-                Timer timer = new Timer(Options.Text);
+                TimerWindow timer = new TimerWindow(Options.Text);
                 timer.Show();
             }
             else
@@ -69,9 +70,21 @@ namespace OverlayTimer
             Options.Text = string.Empty;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            this.NavigationService.GoBack();
+        }
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            Grid.Focus();
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }

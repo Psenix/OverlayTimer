@@ -1,8 +1,7 @@
-﻿using OverlayTimer.Global;
-using OverlayTimer.Models;
+﻿using OverlayTimer.Models;
+using OverlayTimer.Properties;
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,26 +22,6 @@ namespace OverlayTimer.Pages
         {
             InitializeComponent();
             LeaderboardList.ItemsSource = dataModel.Data;
-
-            if (File.Exists(path + "token"))
-            {
-                token = File.ReadAllText(path + "token");
-                if (LeaderboardController.IsValidToken(token))
-                {
-                    Task.Run(LoadLeaderboard);
-                }
-                else
-                {
-                    LeaderboardGrid.Visibility = Visibility.Collapsed;
-                    LoginGrid.Visibility = Visibility.Visible;
-                    MessageBox.Show("Token is not correct, please re-enter the token.", "Invalid token");
-                }
-            }
-            else
-            {
-                LeaderboardGrid.Visibility = Visibility.Collapsed;
-                LoginGrid.Visibility = Visibility.Visible;
-            }
         }
 
         private void LoadLeaderboard()
@@ -85,7 +64,8 @@ namespace OverlayTimer.Pages
                 var item = (DataEntity)e.AddedItems[0];
                 if (Mouse.RightButton == MouseButtonState.Pressed)
                 {
-                    GlobalXAML.MainWindow.MainFrame.NavigationService.Navigate(new EditEntryPage(item.Entry));
+                    this.NavigationService.Navigate(new EditEntryPage(item.Entry));
+                    GC.Collect();
                 }
                 else if (!string.IsNullOrWhiteSpace(item.VideoLink))
                 {
@@ -97,13 +77,31 @@ namespace OverlayTimer.Pages
 
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            GlobalXAML.MainWindow.MainFrame.NavigationService.GoBack();
+            this.NavigationService.GoBack();
         }
 
         private void Page_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            dataModel.Data.Clear();
-            LeaderboardList.Items.Refresh();
+
+            if (!string.IsNullOrWhiteSpace(Settings.Default.AdminToken))
+            {
+                token = Settings.Default.AdminToken;
+                if (LeaderboardController.IsValidToken(token))
+                {
+                    Task.Run(LoadLeaderboard);
+                }
+                else
+                {
+                    LeaderboardGrid.Visibility = Visibility.Collapsed;
+                    LoginGrid.Visibility = Visibility.Visible;
+                    MessageBox.Show("Token is not correct, please re-enter the token.", "Invalid token");
+                }
+            }
+            else
+            {
+                LeaderboardGrid.Visibility = Visibility.Collapsed;
+                LoginGrid.Visibility = Visibility.Visible;
+            }
         }
 
         private void ScrollViewer_PreviewMouseWheel(object sender, System.Windows.Input.MouseWheelEventArgs e)
@@ -134,7 +132,8 @@ namespace OverlayTimer.Pages
             Dispatcher.Invoke(new Action(() => token = TokenTextBox.Text));
             if (LeaderboardController.IsValidToken(token))
             {
-                File.WriteAllText(path + "token", token);
+                Settings.Default.AdminToken = token;
+                Settings.Default.Save();
                 this.token = token;
                 LoadLeaderboard();
                 Dispatcher.BeginInvoke(new Action(() =>
@@ -150,9 +149,17 @@ namespace OverlayTimer.Pages
             Dispatcher.BeginInvoke(new Action(() => ConfirmBtn.IsEnabled = true));
         }
 
-        private void Page_Loaded_1(object sender, RoutedEventArgs e)
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            Task.Run(LoadLeaderboard);
+            Grid.Focus();
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                this.NavigationService.GoBack();
+            }
         }
     }
 }
