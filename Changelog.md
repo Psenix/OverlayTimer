@@ -4,7 +4,7 @@
 
 https://github.com/Psenix/OverlayTimer/commit/bf7001ca3425bfed16403771915cf70edcb132d6
 
-- When approving runs, adapting the time will be easier interpreted (eg. 5 :100 gets changed to 5:2. Previously this would result in 2 milliseconds, now 200 milliseconds.
+- When approving runs, adapting the time will be easier interpreted (eg. 5:100 gets changed to 5:2 ( <= zeros weren't manually added). Previously this would result in 2 milliseconds, now 200 milliseconds.
 - Improvments with saving the files in a config file
 - Settings page is now scrollable
 - Option to disable and enable Discord Rich Presence
@@ -35,11 +35,11 @@ https://github.com/Psenix/OverlayTimer/commit/b599a4a133d88e0c6a0d4e82f8fc889483
 
 - Rules for each game get displayed before starting a timer
 - Token gets checked every time in case it gets invalid
-- X and Y-Coordinates of the timer saves and loads automatically
+- X and Y Coordinates of the timer window position saves and loads automatically
 - After stopping timer the submit page will be topmost
 - For certain tasks threads were added to avoid blocking the GUI
 
-## [1.1.0.0] - 08.08.2022
+## [1.1.0.0] - 28.07.2022
 https://github.com/Psenix/OverlayTimer/commit/baca2109f537ac4b09e18468592c0c0ab0e623b9
 
 - Added a moderator page
@@ -48,7 +48,7 @@ https://github.com/Psenix/OverlayTimer/commit/baca2109f537ac4b09e18468592c0c0ab0
 - Checks the count of a list to avoid crashing when a category is empty
 - Also a little bit of clean up in the code to make it better readable and also less lines.
 
-## [1.0.0.0] - 08.08.2022
+## [1.0.0.0] - 16.07.2022
 https://github.com/Psenix/OverlayTimer/commit/9b1f5b15e243fae63d74843eff50a297be0dc19e
 
 - Added modern message boxes for cleaner UI
