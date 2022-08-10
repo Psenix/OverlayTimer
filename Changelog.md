@@ -22,6 +22,7 @@ https://github.com/Psenix/OverlayTimer/commit/19b05777df14ee9fc96f1c7e7075386f00
 - Also some changes with the API were adapted since variables got renamed for less confusion.
 
 ## [1.3.0.0] - 05.08.2022
+
 https://github.com/Psenix/OverlayTimer/commit/6cea21323eaa7948415b35bce84875ede8b4e1e9
 
 - Added an icon
@@ -31,6 +32,7 @@ https://github.com/Psenix/OverlayTimer/commit/6cea21323eaa7948415b35bce84875ede8
 - Speedruns get sorted by oldest => newest for moderators
 
 ## [1.2.0.0] - 01.08.2022
+
 https://github.com/Psenix/OverlayTimer/commit/b599a4a133d88e0c6a0d4e82f8fc88948354f3ac
 
 - Rules for each game get displayed before starting a timer
@@ -40,6 +42,7 @@ https://github.com/Psenix/OverlayTimer/commit/b599a4a133d88e0c6a0d4e82f8fc889483
 - For certain tasks threads were added to avoid blocking the GUI
 
 ## [1.1.0.0] - 28.07.2022
+
 https://github.com/Psenix/OverlayTimer/commit/baca2109f537ac4b09e18468592c0c0ab0e623b9
 
 - Added a moderator page
@@ -49,6 +52,7 @@ https://github.com/Psenix/OverlayTimer/commit/baca2109f537ac4b09e18468592c0c0ab0
 - Also a little bit of clean up in the code to make it better readable and also less lines.
 
 ## [1.0.0.0] - 16.07.2022
+
 https://github.com/Psenix/OverlayTimer/commit/9b1f5b15e243fae63d74843eff50a297be0dc19e
 
 - Added modern message boxes for cleaner UI
