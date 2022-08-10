@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace OverlayTimer
 {
@@ -30,11 +31,11 @@ namespace OverlayTimer
             }
         }
 
-        public static Guid GetGuidFromID(string ID, string password)
+        public static Guid GetSecretIDFromID(string ID, string password)
         {
             try
             {
-                var response = client.GetAsync("Leaderboard/GetGuidFromID?ID=" + ID + "&password=" + password).Result;
+                var response = client.GetAsync("Leaderboard/GetSecretIDFromID?ID=" + ID + "&password=" + password).Result;
                 var content = response.Content.ReadAsStringAsync().Result;
                 var guid = JsonConvert.DeserializeObject<Guid>(content);
                 return guid;
@@ -78,12 +79,12 @@ namespace OverlayTimer
             _ = client.GetAsync("Leaderboard/ClaimName?name=" + name + "&key=" + key).Result;
         }
 
-        public static List<Entry> GetLeaderboard(string game)
+        public async static Task<List<Entry>> GetLeaderboard(string game)
         {
             try
             {
-                var response = client.GetAsync("Leaderboard/GetLeaderboard?game=" + game).Result;
-                var content = response.Content.ReadAsStringAsync().Result;
+                var response = await client.GetAsync("Leaderboard/GetLeaderboard?game=" + game);
+                var content = await response.Content.ReadAsStringAsync();
                 List<Entry> entries = JsonConvert.DeserializeObject<List<Entry>>(content);
                 return entries;
             }
@@ -123,12 +124,12 @@ namespace OverlayTimer
             }
         }
 
-        public static bool DeleteEntry(string guid, string username)
+        public static bool DeleteEntry(string secretID, string ID)
         {
             try
             {
                 HttpContent stringContent = new StringContent("");
-                var response = client.PostAsync("Leaderboard/DeleteEntry?guid=" + guid + "&username=" + username, stringContent).Result;
+                var response = client.PostAsync("Leaderboard/DeleteEntry?secretID=" + secretID + "&ID=" + ID, stringContent).Result;
                 return JsonConvert.DeserializeObject<bool>(response.Content.ReadAsStringAsync().Result);
             }
             catch

@@ -84,6 +84,9 @@
     <Compile Include="Global\GlobalVariables.cs" />
     <Compile Include="Global\GlobalXAML.cs" />
     <Compile Include="Models\DataModel.cs" />
+    <Compile Include="Pages\ChangelogPage.xaml.cs">
+      <DependentUpon>ChangelogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditEntryPage.xaml.cs">
       <DependentUpon>EditEntryPage.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <DependentUpon>TimerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\TimerModel.cs" />
+    <Page Include="Pages\ChangelogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\EditEntryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +206,9 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="TaskScheduler">
+      <Version>2.10.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

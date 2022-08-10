@@ -1,5 +1,6 @@
 ﻿using OverlayTimer.Properties;
 using OverlayTimer.Utils;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -8,6 +9,7 @@ namespace OverlayTimer.Pages
 {
     public partial class SettingsPage : Page
     {
+        ChangelogPage changelogPage = new ChangelogPage();
         Key startStopKey;
         Key resetKey;
 
@@ -82,6 +84,7 @@ namespace OverlayTimer.Pages
             StartStopText.Text = Settings.Default.StartStopHotkey;
             ResetText.Text = Settings.Default.ResetHotkey;
             DiscordRPC.IsChecked = Settings.Default.DiscordRPC;
+            VersionTextBlock.Text = "v " + Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
@@ -95,6 +98,11 @@ namespace OverlayTimer.Pages
             {
                 this.NavigationService.GoBack();
             }
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(changelogPage);
         }
     }
 }

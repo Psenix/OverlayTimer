@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -72,15 +73,18 @@ namespace OverlayTimer.Pages
             try
             {
                 dataModel.Data.Clear();
+                LeaderboardList.Items.Refresh();
                 if (publicOrLocal == "Public")
                 {
-                    GetPublicLeaderboard(game);
+                    InfoText.Visibility = Visibility.Visible;
+                    ((Label)InfoText.Child).Content = "Loading...";
+                    Thread thread = new Thread(() => GetPublicLeaderboard(game));
+                    thread.Start();
                 }
                 else if (publicOrLocal == "Local")
                 {
                     GetLocalLeaderboard(game);
                 }
-                LeaderboardList.Items.Refresh();
             }
             catch (Exception e)
             {
@@ -88,23 +92,32 @@ namespace OverlayTimer.Pages
             }
         }
 
-        private void GetPublicLeaderboard(string selectedItem)
+        private async void GetPublicLeaderboard(string selectedItem)
         {
-            var list = LeaderboardController.GetLeaderboard(selectedItem);
-            if (list.Count > 0)
+            var list = await LeaderboardController.GetLeaderboard(selectedItem);
+            string localPublicText = string.Empty, gamesText = string.Empty;
+            Dispatcher.Invoke(new Action(() =>
             {
-                NoRuns.Visibility = Visibility.Collapsed;
-                list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
-                foreach (var item in list)
+                localPublicText = LocalPublic.Text;
+                gamesText = Games.Text;
+            }));
+            if (localPublicText == "Public" && gamesText == selectedItem)
+            {
+                if (list.Count > 0)
                 {
-                    DataEntity entity = new DataEntity(item);
-                    dataModel.Data.Add(entity);
-                    LeaderboardList.Items.Refresh();
+                    await Dispatcher.BeginInvoke(new Action(() => InfoText.Visibility = Visibility.Collapsed));
+                    list.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
+                    foreach (var item in list)
+                    {
+                        DataEntity entity = new DataEntity(item);
+                        dataModel.Data.Add(entity);
+                    }
                 }
-            }
-            else
-            {
-                NoRuns.Visibility = Visibility.Visible;
+                else
+                {
+                    await Dispatcher.BeginInvoke(new Action(() => ((Label)InfoText.Child).Content = "No runs available in this category"));
+                }
+                await Dispatcher.BeginInvoke(new Action(() => LeaderboardList.Items.Refresh()));
             }
         }
 
@@ -112,36 +125,38 @@ namespace OverlayTimer.Pages
         {
             if (File.Exists(path + selectedItem))
             {
-                NoRuns.Visibility = Visibility.Collapsed;
-                var stringArray = File.ReadAllLines(path + selectedItem);
-                List<Entry> entries = new List<Entry>();
-                foreach (var item in stringArray)
-                {
-                    entries.Add(JsonConvert.DeserializeObject<Entry>(item));
-                }
+                InfoText.Visibility = Visibility.Collapsed;
+                List<Entry> entries = ReadEntries(selectedItem);
                 if (entries.Count > 0)
                 {
-                    NoRuns.Visibility = Visibility.Collapsed;
                     entries.Sort((x, y) => TimeSpan.Compare(x.TimeScore, y.TimeScore));
                     foreach (var item in entries)
                     {
                         DataEntity entity = new DataEntity(item);
                         dataModel.Data.Add(entity);
-                        LeaderboardList.Items.Refresh();
                     }
-                }
-                else if (selectedItem != "Select a game")
-                {
-                    NoRuns.Visibility = Visibility.Visible;
+                    LeaderboardList.Items.Refresh();
+                    return;
                 }
             }
-            else if (selectedItem != "Select a game")
+            if (selectedItem != "Select a game")
             {
-                NoRuns.Visibility = Visibility.Visible;
+                ((Label)InfoText.Child).Content = "No runs available in this category";
+                InfoText.Visibility = Visibility.Visible;
             }
         }
 
+        private List<Entry> ReadEntries(string selectedItem)
+        {
+            var stringArray = File.ReadAllLines(path + selectedItem);
+            List<Entry> entries = new List<Entry>();
+            foreach (var item in stringArray)
+            {
+                entries.Add(JsonConvert.DeserializeObject<Entry>(item));
+            }
 
+            return entries;
+        }
 
         private void LeaderboardList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -153,29 +168,19 @@ namespace OverlayTimer.Pages
                 {
                     if (LocalPublic.Text == "Local")
                     {
-                        var result = MessageBox.Show("Click 'OK' to delete this run locally.", "Delete", MessageBoxButton.OKCancel);
-                        if (result == MessageBoxResult.OK)
-                        {
-                            var entries = File.ReadAllLines(path + Games.Text).ToList();
-                            for (int i = 0; i < entries.Count; i++)
-                            {
-                                if (item.Entry.ID == JsonConvert.DeserializeObject<Entry>(entries[i]).ID)
-                                {
-                                    entries.RemoveAt(i);
-                                }
-                            }
-                            File.WriteAllLines(path + Games.Text, entries);
-                            Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
-                        }
+                        LocalDeletion(item);
                     }
-                    else if (!string.IsNullOrWhiteSpace(Settings.Default.AdminToken))
+                    else
                     {
-                        var guid = LeaderboardController.GetGuidFromID(item.Entry.ID.ToString(), Settings.Default.AdminToken);
-                        var result = MessageBox.Show("Click 'OK' to delete this run from the database.", "Delete", MessageBoxButton.OKCancel);
-                        if (result == MessageBoxResult.OK)
+                        Guid guid = ReadGuidFromFiles(item.Entry.ID, item.Entry.Category);
+                        if (guid != Guid.Empty)
                         {
-                            LeaderboardController.DeleteEntry(guid.ToString(), item.Name);
-                            Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+                            item.Entry.SecretID = guid;
+                            PublicDeletion(item);
+                        }
+                        else if (!string.IsNullOrWhiteSpace(Settings.Default.AdminToken))
+                        {
+                            PublicDeletion(item);
                         }
                     }
                 }
@@ -184,6 +189,57 @@ namespace OverlayTimer.Pages
                     Process.Start(item.VideoLink);
                 }
                 LeaderboardList.SelectedItem = null;
+            }
+        }
+
+        private void PublicDeletion(DataEntity item)
+        {
+            if (item.Entry.SecretID == Guid.Empty)
+            {
+                item.Entry.SecretID = LeaderboardController.GetSecretIDFromID(item.Entry.ID.ToString(), Settings.Default.AdminToken);
+            }
+            var result = MessageBox.Show("Click 'OK' to delete this run from the database.", "Delete", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                LeaderboardController.DeleteEntry(item.Entry.SecretID.ToString(), item.Entry.ID.ToString());
+                Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
+            }
+        }
+
+        private Guid ReadGuidFromFiles(Guid ID, string category)
+        {
+            if (File.Exists(path + category))
+            {
+                List<Entry> entries = ReadEntries(category);
+                if (entries.Count > 0)
+                {
+                    foreach (var item in entries)
+                    {
+                        if (item.ID == ID)
+                        {
+                            return item.SecretID;
+                        }
+                    }
+                }
+            }
+            return Guid.Empty;
+        }
+
+        private void LocalDeletion(DataEntity item)
+        {
+            var result = MessageBox.Show("Click 'OK' to delete this run locally.", "Delete", MessageBoxButton.OKCancel);
+            if (result == MessageBoxResult.OK)
+            {
+                var entries = File.ReadAllLines(path + Games.Text).ToList();
+                for (int i = 0; i < entries.Count; i++)
+                {
+                    if (item.Entry.ID == JsonConvert.DeserializeObject<Entry>(entries[i]).ID)
+                    {
+                        entries.RemoveAt(i);
+                    }
+                }
+                File.WriteAllLines(path + Games.Text, entries);
+                Task.Run(() => Dispatcher.BeginInvoke(new Action(() => LoadLeaderboard(LocalPublic.Text, Games.Text))));
             }
         }
 
@@ -199,7 +255,7 @@ namespace OverlayTimer.Pages
             dataModel.Data.Clear();
             LeaderboardList.Items.Refresh();
             LocalPublic.Text = "Public";
-            NoRuns.Visibility = Visibility.Collapsed;
+            InfoText.Visibility = Visibility.Collapsed;
         }
 
         private void ScrollViewer_PreviewMouseWheel(object sender, MouseWheelEventArgs e)

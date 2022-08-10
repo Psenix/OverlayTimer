@@ -128,7 +128,7 @@ namespace OverlayTimer.Pages
 
         private void DeleteEntry()
         {
-            LeaderboardController.DeleteEntry(item.SecretID.ToString(), item.Username);
+            LeaderboardController.DeleteEntry(item.SecretID.ToString(), item.ID.ToString());
             Dispatcher.BeginInvoke(new Action(() => this.NavigationService.GoBack()));
         }
 

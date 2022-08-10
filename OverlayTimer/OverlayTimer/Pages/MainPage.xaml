@@ -87,5 +87,10 @@
                 <materialDesign:PackIcon Kind="Cog" Width="auto" Height="auto"/>
             </Button>
         </Viewbox>
+        <Viewbox Grid.Row="21" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Button x:Name="DiscordBtn" Background="Transparent" BorderThickness="0" materialDesign:ButtonAssist.CornerRadius="5" Click="DiscordBtn_Click">
+                <materialDesign:PackIcon Kind="Discord" Foreground="SlateBlue"  Width="auto" Height="auto"/>
+            </Button>
+        </Viewbox>
     </Grid>
 </Page>

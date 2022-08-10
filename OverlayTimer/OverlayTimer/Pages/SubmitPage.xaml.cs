@@ -70,7 +70,8 @@ namespace OverlayTimer
                 Username = userName,
                 Category = category,
                 SubmitDate = DateTime.UtcNow,
-                UsernameKey = Settings.Default.UserID
+                UsernameKey = Settings.Default.UserID,
+                SecretID = Guid.NewGuid()
             };
             Dispatcher.Invoke(new Action(() => entry.VideoLink = VideoLink.Text));
             if (!LeaderboardController.IsLinkDuplicate(entry.VideoLink))

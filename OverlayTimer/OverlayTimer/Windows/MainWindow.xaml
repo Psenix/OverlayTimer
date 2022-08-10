@@ -5,6 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OverlayTimer"
         mc:Ignorable="d"
-        Title="Overlay Timer" MinHeight="450" MinWidth="800" Height="450" Width="800" Background="#FF1F1F1F" Closing="Window_Closing" WindowStartupLocation="CenterScreen" >
+        Title="Overlay Timer" MinHeight="450" MinWidth="800" Height="450" Width="800" Background="#FF1F1F1F" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 </Window>

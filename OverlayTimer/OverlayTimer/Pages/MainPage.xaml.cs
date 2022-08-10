@@ -3,6 +3,7 @@ using OverlayTimer.Pages;
 using OverlayTimer.Properties;
 using OverlayTimer.Utils;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Windows;
@@ -21,7 +22,6 @@ namespace OverlayTimer
         public MainPage()
         {
             InitializeComponent();
-            Directory.CreateDirectory(path);
             Directory.CreateDirectory(path + "LocalLeaderboard");
             InitializeRTC();
             GenerateUserID();
@@ -202,6 +202,11 @@ namespace OverlayTimer
                 CancelInfoBtn.Visibility = Visibility.Collapsed;
                 SaveInfoBtn.Visibility = Visibility.Collapsed;
             }));
+        }
+
+        private void DiscordBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://discord.gg/qVhbBrtKzr");
         }
     }
 }
