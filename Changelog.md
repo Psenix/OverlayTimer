@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.5.1.2] - 10.08.2022
+
+https://github.com/Psenix/OverlayTimer/commit/16559b589b0e853fa967d0b84fac476913fb45a5
+
+- Auto updates crashes solved
+
+## [1.5.1.1] - 10.08.2022
+
+https://github.com/Psenix/OverlayTimer/commit/4395b1b5b482ce16e1686673954b76bc60185b94
+
+- Auto updates are now available (will always prompt the user to let everyone decide by themselves)
+- Feature to delete own public speedruns was added
+- Changelogs are now available in the program under settings
+- Fixed a bug that did not save user preferences
+- When retrieving public data, a loading info was added and the code for fetching the data is now started as a seperated thread to avoid blocking the GUI
+- A new button to the discord server was added to the main page
+- Fixed a bug where "The Legend of Zelda: Breath of the wild" did not save locally due to unallowed characters in the path
+- Time of a speedrun will not get saved properly, previously the AM/PM information was lost
+- Current version gets shown in the settings
+
 ## [1.5.0.0] - 08.08.2022
 
 https://github.com/Psenix/OverlayTimer/commit/bf7001ca3425bfed16403771915cf70edcb132d6
