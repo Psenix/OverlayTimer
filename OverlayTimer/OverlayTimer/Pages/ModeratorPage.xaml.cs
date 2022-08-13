@@ -75,7 +75,7 @@ namespace OverlayTimer.Pages
             }
         }
 
-        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void BackBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             this.NavigationService.GoBack();
         }

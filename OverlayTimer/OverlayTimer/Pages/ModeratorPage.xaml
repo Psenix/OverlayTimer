@@ -84,11 +84,11 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Viewbox VerticalAlignment="Top" Stretch="Uniform" Grid.RowSpan="2" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.Column="2" Grid.Row="1" >
-                <TextBlock Text="Enter access token" TextAlignment="Left" FontSize="35" Foreground="White"/>
+            <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" Margin="10 0 0 0">
+                <Button Foreground="White" Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
             </Viewbox>
-            <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
-                <Button Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="Button_Click"/>
+            <Viewbox VerticalAlignment="Top" Stretch="Uniform" Margin="10 0 0 0" Grid.RowSpan="2" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.Column="2" Grid.Row="1" >
+                <TextBlock Text="Enter access token" TextAlignment="Left" FontSize="35" Foreground="White"/>
             </Viewbox>
             <TextBox x:Name="TokenTextBox" Grid.ColumnSpan="12" Grid.RowSpan="4" Grid.Row="9" Grid.Column="4" materialDesign:HintAssist.Hint="Token" VerticalContentAlignment="Bottom" Foreground="White" FontSize="26" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
             <Viewbox Grid.RowSpan="3" Grid.ColumnSpan="3" Grid.Row="17" Grid.Column="8" Stretch="Uniform" >
@@ -154,10 +154,10 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" >
-                <Button Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="Button_Click"/>
+            <Viewbox Grid.RowSpan="4" Grid.ColumnSpan="2" Grid.Row="0" Stretch="Uniform" Margin="10 0 0 0">
+                <Button Foreground="White" Background="Transparent" BorderThickness="0" VerticalAlignment="Bottom" Content="🡰" Click="BackBtn_Click"/>
             </Viewbox>
-            <Viewbox VerticalAlignment="Top" Stretch="Uniform" Grid.RowSpan="2" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.Column="2" Grid.Row="1" >
+            <Viewbox VerticalAlignment="Top" Margin="10 0 0 0" Stretch="Uniform" Grid.RowSpan="2" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.Column="2" Grid.Row="1" >
                 <TextBlock Text="Moderating" TextAlignment="Left" FontSize="35" Foreground="White"/>
             </Viewbox>
             <Grid Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="18" Grid.RowSpan="2" MaxHeight="60">

@@ -89,11 +89,11 @@ namespace OverlayTimer.Pages
         private TimeSpan GetTimeSpan()
         {
             TimeSpan timeSpan = new TimeSpan();
-            string milliseconds = string.Empty;
-            Dispatcher.Invoke(new Action(() => milliseconds = Milliseconds.Text));
-            while (milliseconds.Length < 3)
+            int milliseconds = 0;
+            Dispatcher.Invoke(new Action(() => milliseconds = Convert.ToInt32(Milliseconds.Text)));
+            while (milliseconds < 100)
             {
-                milliseconds += "0";
+                milliseconds *= 10;
             }
             Dispatcher.Invoke(new Action(() => timeSpan = new TimeSpan(0, Convert.ToInt32(Hours.Text), Convert.ToInt32(Minutes.Text), Convert.ToInt32(Seconds.Text), Convert.ToInt32(milliseconds))));
             return timeSpan;

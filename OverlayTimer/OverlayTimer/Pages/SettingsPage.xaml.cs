@@ -9,7 +9,7 @@ namespace OverlayTimer.Pages
 {
     public partial class SettingsPage : Page
     {
-        ChangelogPage changelogPage = new ChangelogPage();
+        readonly ChangelogPage changelogPage = new ChangelogPage();
         Key startStopKey;
         Key resetKey;
 
