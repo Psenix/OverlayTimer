@@ -39,14 +39,8 @@ namespace OverlayTimer
         private void GlobalKeyHook_OnKeyDown(object sender, GlobalKeyEventArgs e)
         {
             KeyConverter keyConverter = new KeyConverter();
-            if (File.Exists(path + "StartStopHotkey"))
-            {
-                startStopKey = (Key)keyConverter.ConvertFromString(File.ReadAllText(path + "StartStopHotkey"));
-            }
-            if (File.Exists(path + "ResetHotkey"))
-            {
-                resetKey = (Key)keyConverter.ConvertFromString(File.ReadAllText(path + "ResetHotkey"));
-            }
+            startStopKey = (Key)keyConverter.ConvertFromString(Settings.Default.StartStopHotkey);
+            resetKey = (Key)keyConverter.ConvertFromString(Settings.Default.ResetHotkey);
             if (e.KeyCode == (VirtualKeycodes)KeyInterop.VirtualKeyFromKey(startStopKey))
             {
                 if (timer.Enabled)
