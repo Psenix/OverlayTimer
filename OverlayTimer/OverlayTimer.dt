@@ -1,791 +1,831 @@
 <?xml version="1.0" encoding="utf-16"?>
-<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT1H22M42.0434012S" SolutionTotalViewTime="PT57M22.1220573S" SolutionTotalDebugTime="PT6M22.182453S">
+<DevTrackerData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" SolutionTotalEditTime="PT46M58.9244753S" SolutionTotalViewTime="PT52M9.8647887S" SolutionTotalDebugTime="PT25.9528508S">
   <FileVersion>
     <Major>1</Major>
     <Minor>0</Minor>
   </FileVersion>
-  <SolutionFolder>C:\Repos\OverlayTimer\OverlayTimer</SolutionFolder>
+  <SolutionFolder>C:\repos\OverlayTimer</SolutionFolder>
   <SolutionCreattionDate>2022-07-14T19:23:28.8720231+02:00</SolutionCreattionDate>
   <ProjectsCreatedDateList>
     <ProjectCreated>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-13T13:22:03.7759259+02:00</CreatedDate>
+      <CreatedDate>2022-08-05T19:44:21.0399954+02:00</CreatedDate>
     </ProjectCreated>
   </ProjectsCreatedDateList>
   <SessionTimeList />
   <LastSessionTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT2M6.9532908S" EditActiveTime="PT20M11.5161278S">
+    <DevTrackerDataItem ViewActiveTime="PT2.8351101S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\App.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:24:24.7203639+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M22.263836S" EditActiveTime="PT8M48.1498831S">
+      <ModifiedDate>2022-08-10T17:35:04.7486237+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:16:11.0207215+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M59.5590872S" EditActiveTime="PT4M5.0864326S">
+      <ModifiedDate>2022-08-10T16:51:15.4184772+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:22:27.4282661+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.9528508S" EditActiveTime="PT16M43.625034S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-08-05T19:48:12.4847108+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:31:32.7111932+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT32.065061S" EditActiveTime="PT6.3320027S">
-      <ModifiedDate>2022-08-05T20:29:57.1408077+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:29:22.834788+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M33.669995S" EditActiveTime="PT3M1.972768S">
-      <ModifiedDate>2022-08-05T23:08:37.244739+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:06.4682433+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT10.1882157S" EditActiveTime="PT8.8126749S">
-      <ModifiedDate>2022-08-05T21:01:52.8703979+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Entities\Entry.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T21:01:40.2065994+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3M51.7053509S" EditActiveTime="PT3M25.948135S">
-      <ModifiedDate>2022-08-05T22:33:51.6584933+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:57:49.5659323+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT59.4503365S" EditActiveTime="PT6M53.7851471S">
-      <ModifiedDate>2022-08-05T20:23:05.1370182+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:03:34.6875191+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11M2.8009512S" EditActiveTime="PT12M38.4144925S">
-      <ModifiedDate>2022-08-05T23:25:30.6364658+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:04:19.2902898+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M18.220928S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT5.1468521S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Utils\DiscordRPC.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:45:19.979909+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:57:27.9067424+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6.6386569S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT15.4062321S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T23:39:05.1601307+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:16.057168+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT34.6695969S" EditActiveTime="PT15.8505561S">
-      <ModifiedDate>2022-08-05T23:04:52.5160805+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\ModeratorPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:03.1962402+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11.73055S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1.6091719S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:17.8068732+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:37.1220258+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT8M26.4793551S" EditActiveTime="PT5M41.3110409S">
-      <ModifiedDate>2022-08-05T21:07:42.6710106+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT1M38.0193106S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\GamesController.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:26:55.8237294+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT55.3477119S" EditActiveTime="PT1M7.6346504S">
+      <ModifiedDate>2022-08-10T18:11:07.5730812+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:28.7818622+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T17:39:45.828915+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4M44.9029494S" EditActiveTime="PT6M1.7026938S">
-      <ModifiedDate>2022-08-05T23:02:15.820836+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT33.6025086S" EditActiveTime="PT31.1747755S">
+      <ModifiedDate>2022-08-10T17:54:50.4659956+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\Timer.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T22:40:35.0020124+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:54:35.3951512+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7M8.4415233S" EditActiveTime="PT10M48.9996455S">
+      <ModifiedDate>2022-08-10T18:06:52.4713825+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:53:40.859484+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT11.8061878S" EditActiveTime="PT22.8409532S">
+      <ModifiedDate>2022-08-10T18:07:58.6910956+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\repos\overlaytimer\OverlayTimer\Pages\MainPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:23:32.6605559+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT14.5261077S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:48:59.1024406+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT8.7655095S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T17:10:48.213007+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT9M35.3179165S" EditActiveTime="PT4M41.1840762S">
+      <ModifiedDate>2022-08-10T19:23:07.0595289+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>c:\repos\overlaytimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:23:33.1156531+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT12.7071937S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SelectPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:38.7311977+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.9214053S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.Designer.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:24:07.9561049+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT30.4302048S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.settings</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:18:59.0903706+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M54.3751993S" EditActiveTime="PT13M22.2516778S">
+      <ModifiedDate>2022-08-10T18:15:15.7633465+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:16:38.7040838+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT57.2510371S" EditActiveTime="PT2M22.551686S">
+      <ModifiedDate>2022-08-10T17:35:04.7406235+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:28:21.1843206+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT45.3847562S" EditActiveTime="PT35.1372489S">
+      <ModifiedDate>2022-08-10T18:26:07.3369672+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.0.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:25:22.7610488+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6.4420607S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.6.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:26:59.5625363+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18.0522178S" EditActiveTime="PT13.9074937S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.7.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:27:38.8234642+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.3252072S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:35.9412308+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M10.2836508S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.1.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:43.7055187+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
   </LastSessionTimeList>
   <TotalTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT1M33.8814209S" EditActiveTime="PT41.4953997S">
-      <ModifiedDate>2022-07-14T21:00:18.6677205+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>2</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\App.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:24:40.7253315+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT20.207063S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT2.8351101S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\App.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\App.config</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:26:59.1744841+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:24:24.7203639+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6M22.182453S" EditActiveTime="PT22M47.7807861S">
+    <DevTrackerDataItem ViewActiveTime="PT8M46.1788912S" EditActiveTime="PT8M48.1498831S">
+      <ModifiedDate>2022-08-10T17:35:04.7486237+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-09T23:15:26.3319316+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M59.5590872S" EditActiveTime="PT4M5.0864326S">
+      <ModifiedDate>2022-08-10T16:51:15.4184772+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:22:27.4282661+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.9528508S" EditActiveTime="PT16M43.625034S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>3</EditedCount>
-      <ViewedCount>3</ViewedCount>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-07-14T19:25:46.9682498+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:31:32.7111932+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT32.065061S" EditActiveTime="PT6.3320027S">
-      <ModifiedDate>2022-08-05T20:29:57.1408077+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT5.1468521S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Utils\DiscordRPC.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:57:27.9067424+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT15.4062321S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:16.057168+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1.6091719S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:37.1220258+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M38.0193106S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\GamesController.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:26:55.8237294+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT55.3477119S" EditActiveTime="PT1M7.6346504S">
+      <ModifiedDate>2022-08-10T18:11:07.5730812+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:29:22.834788+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T17:39:45.828915+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M33.669995S" EditActiveTime="PT3M1.972768S">
-      <ModifiedDate>2022-08-05T23:08:37.244739+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT33.6025086S" EditActiveTime="PT31.1747755S">
+      <ModifiedDate>2022-08-10T17:54:50.4659956+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:06.4682433+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:54:35.3951512+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT10.1882157S" EditActiveTime="PT8.8126749S">
-      <ModifiedDate>2022-08-05T21:01:52.8703979+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT7M8.4415233S" EditActiveTime="PT10M48.9996455S">
+      <ModifiedDate>2022-08-10T18:06:52.4713825+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Entities\Entry.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T21:01:40.2065994+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:53:40.859484+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3M51.7053509S" EditActiveTime="PT3M25.948135S">
-      <ModifiedDate>2022-08-05T22:33:51.6584933+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT11M22.6880484S" EditActiveTime="PT22.8409532S">
+      <ModifiedDate>2022-08-10T18:07:58.6910956+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:57:49.5659323+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT7M15.7761479S" EditActiveTime="PT14M5.4158134S">
-      <ModifiedDate>2022-07-14T21:17:14.3782599+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>2</EditedCount>
       <ViewedCount>2</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:26:18.6379636+02:00</CreatedDate>
+      <CreatedDate>2022-08-09T18:02:06.3772539+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT59.4503365S" EditActiveTime="PT6M53.7851471S">
-      <ModifiedDate>2022-08-05T20:23:05.1370182+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:03:34.6875191+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT20.8276463S" EditActiveTime="PT1M32.4021811S">
-      <ModifiedDate>2022-07-14T20:56:26.8161975+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
+    <DevTrackerDataItem ViewActiveTime="PT14.5261077S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:41:00.0662354+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:48:59.1024406+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11M2.8009512S" EditActiveTime="PT12M38.4144925S">
-      <ModifiedDate>2022-08-05T23:25:30.6364658+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
+    <DevTrackerDataItem ViewActiveTime="PT8.7655095S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:04:19.2902898+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT43.655848S" EditActiveTime="PT21.2891865S">
-      <ModifiedDate>2022-07-14T19:47:18.0601768+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\MainWindow.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:34:29.3877607+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T17:10:48.213007+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M18.220928S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:45:19.979909+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6.6386569S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T23:39:05.1601307+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT34.6695969S" EditActiveTime="PT15.8505561S">
-      <ModifiedDate>2022-08-05T23:04:52.5160805+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT9M57.5717454S" EditActiveTime="PT4M41.1840762S">
+      <ModifiedDate>2022-08-10T19:23:07.0595289+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\ModeratorPage.xaml.cs</Item>
+      <ViewedCount>2</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:03.1962402+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-09T18:01:44.1144233+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M28.305861S" EditActiveTime="PT3M40.1165416S">
-      <ModifiedDate>2022-07-14T21:03:22.8749943+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>2</EditedCount>
-      <ViewedCount>2</ViewedCount>
+    <DevTrackerDataItem ViewActiveTime="PT12.7071937S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SelectPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:27:59.9890817+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:18:38.7311977+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT24.3810772S" EditActiveTime="PT24.9630305S">
-      <ModifiedDate>2022-07-14T19:35:47.7081818+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SelectPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:35:13.4663557+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11.73055S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT35.9214053S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:17.8068732+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT6M31.4237372S" EditActiveTime="PT7M33.6571327S">
-      <ModifiedDate>2022-07-14T21:23:27.1442054+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>3</EditedCount>
-      <ViewedCount>3</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.Designer.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:24:50.4959438+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:24:07.9561049+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M46.0509564S" EditActiveTime="PT16M7.1768154S">
-      <ModifiedDate>2022-07-14T21:19:31.4915329+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:10:41.107105+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT8M26.4793551S" EditActiveTime="PT5M41.3110409S">
-      <ModifiedDate>2022-08-05T21:07:42.6710106+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:28.7818622+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT14.7324088S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT30.4302048S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
-      <ViewedCount>2</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\Timer.xaml</Item>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.settings</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:38:37.1096416+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:18:59.0903706+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT10.3610045S" EditActiveTime="PT1.3882117S">
-      <ModifiedDate>2022-07-14T19:38:56.2506086+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT2M54.3751993S" EditActiveTime="PT13M22.2516778S">
+      <ModifiedDate>2022-08-10T18:15:15.7633465+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\Timer.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:38:51.604388+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:16:38.7040838+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4M44.9029494S" EditActiveTime="PT6M1.7026938S">
-      <ModifiedDate>2022-08-05T23:02:15.820836+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT57.2510371S" EditActiveTime="PT2M22.551686S">
+      <ModifiedDate>2022-08-10T17:35:04.7406235+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\Timer.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T22:40:35.0020124+02:00</CreatedDate>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:28:21.1843206+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT45.3847562S" EditActiveTime="PT35.1372489S">
+      <ModifiedDate>2022-08-10T18:26:07.3369672+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.0.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:25:22.7610488+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6.4420607S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.6.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:26:59.5625363+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT18.0522178S" EditActiveTime="PT13.9074937S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.7.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:27:38.8234642+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT29.3252072S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:35.9412308+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT1M10.2836508S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.1.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:43.7055187+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
   </TotalTimeList>
   <HistoryTimeList>
-    <DevTrackerDataItem ViewActiveTime="PT6.6386569S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT5.1468521S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T23:39:05.1601307+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4M44.9029494S" EditActiveTime="PT6M1.7026938S">
-      <ModifiedDate>2022-08-05T23:02:15.820836+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\Timer.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T22:40:35.0020124+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT10.1882157S" EditActiveTime="PT8.8126749S">
-      <ModifiedDate>2022-08-05T21:01:52.8703979+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Entities\Entry.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T21:01:40.2065994+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M33.669995S" EditActiveTime="PT3M1.972768S">
-      <ModifiedDate>2022-08-05T23:08:37.244739+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:06.4682433+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT34.6695969S" EditActiveTime="PT15.8505561S">
-      <ModifiedDate>2022-08-05T23:04:52.5160805+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\ModeratorPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:30:03.1962402+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT32.065061S" EditActiveTime="PT6.3320027S">
-      <ModifiedDate>2022-08-05T20:29:57.1408077+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:29:22.834788+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11M2.8009512S" EditActiveTime="PT12M38.4144925S">
-      <ModifiedDate>2022-08-05T23:25:30.6364658+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:04:19.2902898+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT59.4503365S" EditActiveTime="PT6M53.7851471S">
-      <ModifiedDate>2022-08-05T20:23:05.1370182+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T20:03:34.6875191+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3M51.7053509S" EditActiveTime="PT3M25.948135S">
-      <ModifiedDate>2022-08-05T22:33:51.6584933+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:57:49.5659323+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT8M26.4793551S" EditActiveTime="PT5M41.3110409S">
-      <ModifiedDate>2022-08-05T21:07:42.6710106+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:28.7818622+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT11.73055S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:52:17.8068732+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M6.9532908S" EditActiveTime="PT20M11.5161278S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>Debug Mode</Item>
-      <ItemType>DebugModeItem</ItemType>
-      <ProjectName />
-      <CreatedDate>2022-08-05T19:48:12.4847108+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M18.220928S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\Repos\OverlayTimer\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-08-05T19:45:19.979909+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT0S" EditActiveTime="PT0S">
-      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>0</EditedCount>
-      <ViewedCount>0</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\App.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Utils\DiscordRPC.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T21:23:34.5512749+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:57:27.9067424+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M44.4116248S" EditActiveTime="PT23.9888068S">
-      <ModifiedDate>2022-07-14T21:23:27.1442054+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T21:22:34.9575367+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT20.8276463S" EditActiveTime="PT1M32.4021811S">
-      <ModifiedDate>2022-07-14T20:56:26.8161975+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
+    <DevTrackerDataItem ViewActiveTime="PT14.5261077S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:41:00.0662354+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T18:48:59.1024406+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT21.4282374S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1M10.2836508S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\MainWindow.xaml</Item>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.1.0\user.config</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:40:42.0733169+02:00</CreatedDate>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:43.7055187+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT0.2406855S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT29.3252072S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\Windows\Timer.xaml</Item>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.5.0.0\user.config</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:40:41.8302516+02:00</CreatedDate>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:44:35.9412308+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT15.0953315S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT18.0522178S" EditActiveTime="PT13.9074937S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.7.0.0\user.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:27:38.8234642+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT6.4420607S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\Pages\SelectPage.xaml.cs</Item>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_vxd4nc2g4vsm0mzvbn3q1t044ggpclzs\1.6.0.0\user.config</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:15:46.4624789+02:00</CreatedDate>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:26:59.5625363+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT43.0720471S" EditActiveTime="PT1M19.8177874S">
-      <ModifiedDate>2022-07-14T21:03:22.8749943+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT1M38.0193106S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\GamesController.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:26:55.8237294+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT45.3847562S" EditActiveTime="PT35.1372489S">
+      <ModifiedDate>2022-08-10T18:26:07.3369672+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\Pages\SelectPage.xaml</Item>
+      <Item>C:\Users\armul\AppData\Local\OverlayTimer\OverlayTimer.exe_Url_002sa5wgcxhmjfqmzisa1i53h3dk3c4c\1.0.0.0\user.config</Item>
       <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:15:43.8150182+02:00</CreatedDate>
+      <ProjectName />
+      <CreatedDate>2022-08-10T18:25:22.7610488+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT2M46.0509564S" EditActiveTime="PT16M7.1768154S">
-      <ModifiedDate>2022-07-14T21:19:31.4915329+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT2.8351101S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\App.config</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:24:24.7203639+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT35.9214053S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.Designer.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:24:07.9561049+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT30.4302048S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Properties\Settings.settings</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T18:18:59.0903706+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT55.3477119S" EditActiveTime="PT1M7.6346504S">
+      <ModifiedDate>2022-08-10T18:11:07.5730812+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Controllers\LeaderboardController.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T20:10:41.107105+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T17:39:45.828915+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT3M33.0801672S" EditActiveTime="PT2M9.2584593S">
+    <DevTrackerDataItem ViewActiveTime="PT8.7655095S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T17:10:48.213007+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT33.6025086S" EditActiveTime="PT31.1747755S">
+      <ModifiedDate>2022-08-10T17:54:50.4659956+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:54:35.3951512+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT7M8.4415233S" EditActiveTime="PT10M48.9996455S">
+      <ModifiedDate>2022-08-10T18:06:52.4713825+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\LeaderboardPage.xaml.cs</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:53:40.859484+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT25.9528508S" EditActiveTime="PT16M43.625034S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>Debug Mode</Item>
       <ItemType>DebugModeItem</ItemType>
       <ProjectName />
-      <CreatedDate>2022-07-14T19:58:48.2451073+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:31:32.7111932+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M2.9566775S" EditActiveTime="PT32.5465204S">
-      <ModifiedDate>2022-07-14T21:00:18.6677205+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT57.2510371S" EditActiveTime="PT2M22.551686S">
+      <ModifiedDate>2022-08-10T17:35:04.7406235+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\App.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:58:47.9412546+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:28:21.1843206+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT4M0.6868267S" EditActiveTime="PT6M9.476339S">
-      <ModifiedDate>2022-07-14T21:21:52.6267744+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT9M35.3139169S" EditActiveTime="PT4M41.1840762S">
+      <ModifiedDate>2022-08-10T19:23:07.0595289+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>c:\repos\overlaytimer\OverlayTimer\Pages\SubmitPage.xaml</Item>
+      <Item>c:\repos\overlaytimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:58:47.5837977+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:23:33.1156531+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT5M34.5562146S" EditActiveTime="PT6M48.9723979S">
-      <ModifiedDate>2022-07-14T21:17:14.3782599+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT11.8061878S" EditActiveTime="PT22.8409532S">
+      <ModifiedDate>2022-08-10T18:07:58.6910956+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
+      <Item>c:\repos\overlaytimer\OverlayTimer\Pages\MainPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:56:30.2907068+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:23:32.6605559+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT10.3610045S" EditActiveTime="PT1.3882117S">
-      <ModifiedDate>2022-07-14T19:38:56.2506086+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT2M59.5590872S" EditActiveTime="PT4M5.0864326S">
+      <ModifiedDate>2022-08-10T16:51:15.4184772+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\Timer.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:38:51.604388+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:22:27.4282661+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT14.4917233S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT12.7071937S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\Timer.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:38:37.1096416+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT9.2857457S" EditActiveTime="PT24.9630305S">
-      <ModifiedDate>2022-07-14T19:35:47.7081818+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SelectPage.xaml.cs</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:35:13.4663557+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT22.2276106S" EditActiveTime="PT21.2891865S">
-      <ModifiedDate>2022-07-14T19:47:18.0601768+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\MainWindow.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:34:29.3877607+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M45.2338139S" EditActiveTime="PT2M20.2987542S">
-      <ModifiedDate>2022-07-14T19:36:27.4312215+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SelectPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:27:59.9890817+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:18:38.7311977+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT20.207063S" EditActiveTime="PT0S">
+    <DevTrackerDataItem ViewActiveTime="PT1.6091719S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
       <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\App.xaml.cs</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:26:59.1744841+02:00</CreatedDate>
+      <CreatedDate>2022-08-10T16:18:37.1220258+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT1M41.2199333S" EditActiveTime="PT7M16.4434155S">
-      <ModifiedDate>2022-07-14T19:51:49.1382477+02:00</ModifiedDate>
+    <DevTrackerDataItem ViewActiveTime="PT15.4062321S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\EditEntryPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:18:16.057168+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT2M54.3751993S" EditActiveTime="PT13M22.2516778S">
+      <ModifiedDate>2022-08-10T18:15:15.7633465+02:00</ModifiedDate>
       <ModifiedBy>armul</ModifiedBy>
       <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SettingsPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:16:38.7040838+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M22.263836S" EditActiveTime="PT8M48.1498831S">
+      <ModifiedDate>2022-08-10T17:35:04.7486237+02:00</ModifiedDate>
+      <ModifiedBy>armul</ModifiedBy>
+      <EditedCount>1</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-10T16:16:11.0207215+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT4M23.9150552S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
+      <ViewedCount>1</ViewedCount>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\ChangelogPage.xaml</Item>
+      <ItemType>ProjectItem</ItemType>
+      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
+      <CreatedDate>2022-08-09T23:15:26.3319316+02:00</CreatedDate>
+      <ViewedBy>armul</ViewedBy>
+    </DevTrackerDataItem>
+    <DevTrackerDataItem ViewActiveTime="PT11M10.8818606S" EditActiveTime="PT0S">
+      <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
       <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\MainPage.xaml</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:26:18.6379636+02:00</CreatedDate>
+      <CreatedDate>2022-08-09T18:02:06.3772539+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT42.148995S" EditActiveTime="PT27.0071994S">
+    <DevTrackerDataItem ViewActiveTime="PT22.2588266S" EditActiveTime="PT0S">
       <ModifiedDate>0001-01-01T00:00:00</ModifiedDate>
-      <EditedCount>1</EditedCount>
+      <EditedCount>0</EditedCount>
       <ViewedCount>1</ViewedCount>
-      <Item>Debug Mode</Item>
-      <ItemType>DebugModeItem</ItemType>
-      <ProjectName />
-      <CreatedDate>2022-07-14T19:25:46.9682498+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT46.3252857S" EditActiveTime="PT1M0.1919869S">
-      <ModifiedDate>2022-07-14T19:36:27.4391929+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\Pages\SubmitPage.xaml</Item>
+      <Item>C:\repos\OverlayTimer\OverlayTimer\Windows\MainWindow.xaml.cs</Item>
       <ItemType>ProjectItem</ItemType>
       <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:24:50.4959438+02:00</CreatedDate>
-      <ViewedBy>armul</ViewedBy>
-    </DevTrackerDataItem>
-    <DevTrackerDataItem ViewActiveTime="PT30.9247434S" EditActiveTime="PT8.9488793S">
-      <ModifiedDate>2022-07-14T19:26:15.0976834+02:00</ModifiedDate>
-      <ModifiedBy>armul</ModifiedBy>
-      <EditedCount>1</EditedCount>
-      <ViewedCount>1</ViewedCount>
-      <Item>C:\repos\OverlayTimer\OverlayTimer\App.xaml</Item>
-      <ItemType>ProjectItem</ItemType>
-      <ProjectName>C:\repos\OverlayTimer\OverlayTimer\OverlayTimer.csproj</ProjectName>
-      <CreatedDate>2022-07-14T19:24:40.7253315+02:00</CreatedDate>
+      <CreatedDate>2022-08-09T18:01:44.1144233+02:00</CreatedDate>
       <ViewedBy>armul</ViewedBy>
     </DevTrackerDataItem>
   </HistoryTimeList>
