@@ -24,7 +24,6 @@ namespace OverlayTimer
             InitializeComponent();
             Directory.CreateDirectory(path + "LocalLeaderboard");
             InitializeRTC();
-            GenerateUserID();
             NameTextBox.Text = Settings.Default.Username;
             GlobalXAML.MainPage = this;
         }
@@ -33,16 +32,6 @@ namespace OverlayTimer
         {
             if (Settings.Default.DiscordRPC)
                 RPC.Initialize();
-        }
-
-        private void GenerateUserID()
-        {
-            if (Settings.Default.UserID == Guid.Empty)
-            {
-                Settings.Default.UserID = Guid.NewGuid();
-                Settings.Default.Save();
-            }
-
         }
 
         private void NewTimerBtn_Click(object sender, RoutedEventArgs e)

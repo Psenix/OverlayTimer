@@ -81,6 +81,11 @@ namespace OverlayTimer
 
         private void Timer_Tick(object sender, EventArgs e)
         {
+            UpdateTime();
+        }
+
+        private void UpdateTime()
+        {
             var timeSpan = DateTime.Now.Subtract(startTime);
             if (timeSpan < TimeSpan.FromHours(1))
             {
@@ -96,7 +101,6 @@ namespace OverlayTimer
                 timerModel.Timer = timeStr;
             }
         }
-
 
         private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
         {

@@ -3,6 +3,7 @@ using OverlayTimer.Global;
 using OverlayTimer.Properties;
 using OverlayTimer.Utils;
 using System;
+using System.Configuration;
 using System.IO;
 using System.Net.Http;
 using System.Reflection;
@@ -17,12 +18,39 @@ namespace OverlayTimer
         public MainWindow()
         {
             InitializeComponent();
-            Settings.Default.Upgrade();
             Task.Run(CheckForUpdate);
+            UpgradeVersion(ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath);
             GlobalXAML.MainWindow = this;
             MainFrame.NavigationService.Navigate(new MainPage());
             GC.Collect();
-            this.Activate();
+            Activate();
+        }
+
+        private static void UpgradeVersion(string path)
+        {
+            GenerateUserID(path);
+            Settings.Default.Upgrade();
+
+            Version currentVersion = Assembly.GetExecutingAssembly().GetName().Version;
+            string[] fileEntries = Directory.GetDirectories(Path.Combine(path, @"..\..\"));
+            foreach (string filename in fileEntries)
+            {
+                Version savedVersion = new Version(Path.GetFileName(filename));
+                if (savedVersion < currentVersion)
+                    Directory.Delete(filename, true);
+            }
+        }
+        private static void GenerateUserID(string path)
+        {
+            if (!File.Exists(path))
+            {
+                if (Settings.Default.UserID == Guid.Empty)
+                {
+                    Settings.Default.UserID = Guid.NewGuid();
+                    Settings.Default.Save();
+                }
+            }
+
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
