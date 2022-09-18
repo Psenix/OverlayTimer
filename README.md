@@ -16,6 +16,12 @@
 ![Platform](https://img.shields.io/badge/platform-windows-blue.svg?style=for-the-badge&color=0cf)
 ![Commits](https://img.shields.io/github/commit-activity/y/Psenix/OverlayTimer.svg?style=for-the-badge)
 
+#
+<p align="center">
+  <a href="https://discord.com/invite/qVhbBrtKzr">
+      <img src="https://invidget.switchblade.xyz/qVhbBrtKzr" alt="Discord Invite"/>
+  </a>
+</p>
 
 ## [English Version]
 ***[DEUTSCHE VERSION UNTEN]***
