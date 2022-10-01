@@ -66,7 +66,7 @@ namespace OverlayTimer
         {
             if (NameTextBox.IsFocused)
             {
-                if (NameTextBox.Text.ToLower() == Settings.Default.Username.ToLower())
+                if (NameTextBox.Text == Settings.Default.Username)
                 {
                     CancelInfoBtn.Visibility = Visibility.Collapsed;
                     SaveInfoBtn.Visibility = Visibility.Collapsed;
@@ -157,7 +157,7 @@ namespace OverlayTimer
             }
             else
             {
-                if (LeaderboardController.IsNameTaken(name))
+                if (LeaderboardController.IsNameTaken(name, Settings.Default.UserID.ToString()))
                 {
                     Dispatcher.BeginInvoke(new Action(() =>
                     {

@@ -60,11 +60,11 @@ namespace OverlayTimer
             }
         }
 
-        public static bool IsNameTaken(string name)
+        public static bool IsNameTaken(string name, string key)
         {
             try
             {
-                var response = client.GetAsync("Leaderboard/IsNameTaken?name=" + name).Result;
+                var response = client.GetAsync("Leaderboard/IsNameTaken?name=" + name + "&key=" + key).Result;
                 var content = response.Content.ReadAsStringAsync().Result;
                 return JsonConvert.DeserializeObject<bool>(content);
             }
